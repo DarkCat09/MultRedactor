@@ -22,12 +22,12 @@ namespace WindowsFormsApplication1
             File.AppendAllText(filename, Environment.NewLine);
         }
 
-        public static void MovePerson(string filename, string name)
+        public static void MovePerson(string filename, string name, Person p)
         {
             File.AppendAllText(filename, "        " + name + ".angle++" + Environment.NewLine);
             File.AppendAllText(filename, "        " + name + ".x = 500 + 200 * cos (" + name + ".angle / 10);" + Environment.NewLine);
             File.AppendAllText(filename, "        " + name + ".y = 300 + 200 * sin (" + name + ".angle / 10);" + Environment.NewLine);
-            File.AppendAllText(filename, "        txTransparentBlt(txDC(), " + name + ".x, " + name + ".x, 55, 86, " + name + ".texture, 55 * " + name + ".nomer_kadra, 0, RGB(0, 255, 255));" + Environment.NewLine);
+            File.AppendAllText(filename, "        txTransparentBlt(txDC(), " + name + ".x, " + name + ".y, " + p.width + "," + p.height + "," + name + ".texture, " + p.width + "/" + p.sprite + " * " + name + ".nomer_kadra, 0, RGB(0, 255, 255));" + Environment.NewLine);
             File.AppendAllText(filename, Environment.NewLine);
             File.AppendAllText(filename, "        " + name + ".nomer_kadra++;" + Environment.NewLine);
             File.AppendAllText(filename, Environment.NewLine);
