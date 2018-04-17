@@ -29,6 +29,8 @@ namespace WindowsFormsApplication1
         public String sprite;
         public String moveside;
         public String charname;
+        public String height;
+        public String width;
 
         public static string PersonName(int nomer)
         {

@@ -192,10 +192,14 @@ namespace WindowsFormsApplication1
             if (pNomer == -120)
             {
                 persons[nomerPersa].adress = openFileDialog1.FileName;
+                persons[nomerPersa].width = openSpace.Image.Width.ToString();
+                persons[nomerPersa].height = openSpace.Image.Height.ToString();
             }
             else
             {
                 persons[pNomer].adress = openFileDialog1.FileName;
+                persons[pNomer].width = openSpace.Image.Width.ToString();
+                persons[pNomer].height = openSpace.Image.Height.ToString();
             }
         }
 
@@ -260,7 +264,7 @@ namespace WindowsFormsApplication1
                     }
                     else if (persons[nomer].moveside == "Кругами")
                     {
-                        Circle.MovePerson(filename, Person.PersonName(nomer));
+                        Circle.MovePerson(filename, Person.PersonName(nomer), persons[nomer]);
                     }
                     else if (persons[nomer].moveside == "Диагонально")
                     {
