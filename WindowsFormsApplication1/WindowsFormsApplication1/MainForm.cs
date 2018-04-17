@@ -167,9 +167,10 @@ namespace WindowsFormsApplication1
             File.AppendAllText(filename, Environment.NewLine);
             File.AppendAllText(filename, "   " + name + ".x = " + p.x1 + "; " + Environment.NewLine);
             File.AppendAllText(filename, "   " + name + ".y = " + p.y1 + "; " + Environment.NewLine);
+            File.AppendAllText(filename, "   " + name + ".x2 = " + p.x2 + "; " + Environment.NewLine);
+            File.AppendAllText(filename, "   " + name + ".y2 = " + p.y2 + "; " + Environment.NewLine);
             File.AppendAllText(filename, "   " + name + ".nomer_kadra = 0; " + Environment.NewLine);
             File.AppendAllText(filename, "   " + name + ".texture = txLoadImage(\"Pictures\\\\" + Path.GetFileName(p.adress) + "\"); " + Environment.NewLine);
-            File.AppendAllText(filename, " " + name + ".gr_dvigx = 1000; " + Environment.NewLine);
         }
 
         private void go_pryamo(string filename, string name)
@@ -238,7 +239,7 @@ namespace WindowsFormsApplication1
                     }
                     else if (persons[nomer].moveside == "Волнами")
                     {
-                        Sinus.CreatePerson(filename, Person.PersonName(nomer), persons[nomer].coord);
+                        Sinus.CreatePerson(filename, Person.PersonName(nomer), persons[nomer]);
                     }
                     else if (persons[nomer].moveside == "Кругами")
                     {
