@@ -74,39 +74,35 @@ namespace WindowsFormsApplication1
             // 
             this.LabelData.AutoSize = true;
             this.LabelData.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelData.Location = new System.Drawing.Point(0, 11);
-            this.LabelData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelData.Location = new System.Drawing.Point(0, 9);
             this.LabelData.Name = "LabelData";
-            this.LabelData.Size = new System.Drawing.Size(278, 28);
+            this.LabelData.Size = new System.Drawing.Size(224, 23);
             this.LabelData.TabIndex = 0;
             this.LabelData.Text = "Данные о мултфильме:";
             // 
             // LabelLengh
             // 
             this.LabelLengh.AutoSize = true;
-            this.LabelLengh.Location = new System.Drawing.Point(19, 74);
-            this.LabelLengh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelLengh.Location = new System.Drawing.Point(14, 60);
             this.LabelLengh.Name = "LabelLengh";
-            this.LabelLengh.Size = new System.Drawing.Size(175, 17);
+            this.LabelLengh.Size = new System.Drawing.Size(136, 13);
             this.LabelLengh.TabIndex = 1;
             this.LabelLengh.Text = "Длительность: 35 секунд";
             // 
             // LabelName
             // 
             this.LabelName.AutoSize = true;
-            this.LabelName.Location = new System.Drawing.Point(19, 106);
-            this.LabelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelName.Location = new System.Drawing.Point(14, 86);
             this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(76, 17);
+            this.LabelName.Size = new System.Drawing.Size(60, 13);
             this.LabelName.TabIndex = 2;
             this.LabelName.Text = "Название:";
             // 
             // nazvanieTextBox
             // 
-            this.nazvanieTextBox.Location = new System.Drawing.Point(107, 106);
-            this.nazvanieTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nazvanieTextBox.Location = new System.Drawing.Point(80, 86);
             this.nazvanieTextBox.Name = "nazvanieTextBox";
-            this.nazvanieTextBox.Size = new System.Drawing.Size(183, 22);
+            this.nazvanieTextBox.Size = new System.Drawing.Size(138, 20);
             this.nazvanieTextBox.TabIndex = 3;
             // 
             // panel1
@@ -122,38 +118,34 @@ namespace WindowsFormsApplication1
             this.panel1.Controls.Add(this.LabelName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(396, 468);
+            this.panel1.Size = new System.Drawing.Size(297, 380);
             this.panel1.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 337);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(14, 274);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(344, 17);
+            this.label1.Size = new System.Drawing.Size(259, 13);
             this.label1.TabIndex = 24;
             this.label1.Text = "number    name         state             view             delete";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(59, 286);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(44, 232);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(229, 17);
+            this.label13.Size = new System.Drawing.Size(180, 13);
             this.label13.TabIndex = 23;
             this.label13.Text = "ИНФОРМАЦИЯ О ПЕРСОНАЖАХ";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // PictureBoxBackground
             // 
-            this.PictureBoxBackground.Location = new System.Drawing.Point(22, 194);
-            this.PictureBoxBackground.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PictureBoxBackground.Location = new System.Drawing.Point(16, 158);
             this.PictureBoxBackground.Name = "PictureBoxBackground";
-            this.PictureBoxBackground.Size = new System.Drawing.Size(156, 88);
+            this.PictureBoxBackground.Size = new System.Drawing.Size(117, 72);
             this.PictureBoxBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBoxBackground.TabIndex = 12;
             this.PictureBoxBackground.TabStop = false;
@@ -161,19 +153,17 @@ namespace WindowsFormsApplication1
             // LabelBackground
             // 
             this.LabelBackground.AutoSize = true;
-            this.LabelBackground.Location = new System.Drawing.Point(19, 140);
-            this.LabelBackground.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelBackground.Location = new System.Drawing.Point(14, 114);
             this.LabelBackground.Name = "LabelBackground";
-            this.LabelBackground.Size = new System.Drawing.Size(100, 17);
+            this.LabelBackground.Size = new System.Drawing.Size(77, 13);
             this.LabelBackground.TabIndex = 11;
             this.LabelBackground.Text = "Выбрать фон:";
             // 
             // dobavitFonButton
             // 
-            this.dobavitFonButton.Location = new System.Drawing.Point(23, 160);
-            this.dobavitFonButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dobavitFonButton.Location = new System.Drawing.Point(17, 130);
             this.dobavitFonButton.Name = "dobavitFonButton";
-            this.dobavitFonButton.Size = new System.Drawing.Size(155, 30);
+            this.dobavitFonButton.Size = new System.Drawing.Size(116, 24);
             this.dobavitFonButton.TabIndex = 10;
             this.dobavitFonButton.Text = "Добавить";
             this.dobavitFonButton.UseVisualStyleBackColor = true;
@@ -181,10 +171,9 @@ namespace WindowsFormsApplication1
             // 
             // splitter1
             // 
-            this.splitter1.Location = new System.Drawing.Point(396, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitter1.Location = new System.Drawing.Point(297, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(4, 468);
+            this.splitter1.Size = new System.Drawing.Size(3, 380);
             this.splitter1.TabIndex = 5;
             this.splitter1.TabStop = false;
             // 
@@ -195,19 +184,17 @@ namespace WindowsFormsApplication1
             this.panel2.Controls.Add(this.SaveMultButton);
             this.panel2.Controls.Add(this.ButtonAddChar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(400, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(300, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(503, 468);
+            this.panel2.Size = new System.Drawing.Size(377, 380);
             this.panel2.TabIndex = 6;
             // 
             // SaveCharButton
             // 
             this.SaveCharButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.SaveCharButton.Location = new System.Drawing.Point(0, 394);
-            this.SaveCharButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SaveCharButton.Location = new System.Drawing.Point(0, 320);
             this.SaveCharButton.Name = "SaveCharButton";
-            this.SaveCharButton.Size = new System.Drawing.Size(503, 37);
+            this.SaveCharButton.Size = new System.Drawing.Size(377, 30);
             this.SaveCharButton.TabIndex = 3;
             this.SaveCharButton.Text = "Сохранить персонажа";
             this.SaveCharButton.UseVisualStyleBackColor = true;
@@ -233,37 +220,33 @@ namespace WindowsFormsApplication1
             this.panel3.Controls.Add(this.ComboBoxMove);
             this.panel3.Controls.Add(this.LabelMoveType);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 32);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(0, 26);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(503, 399);
+            this.panel3.Size = new System.Drawing.Size(377, 324);
             this.panel3.TabIndex = 2;
             this.panel3.Visible = false;
             // 
             // charNameBox
             // 
-            this.charNameBox.Location = new System.Drawing.Point(113, 142);
-            this.charNameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.charNameBox.Location = new System.Drawing.Point(85, 115);
             this.charNameBox.Name = "charNameBox";
-            this.charNameBox.Size = new System.Drawing.Size(183, 22);
+            this.charNameBox.Size = new System.Drawing.Size(138, 20);
             this.charNameBox.TabIndex = 19;
             // 
             // charNameLabel
             // 
             this.charNameLabel.AutoSize = true;
-            this.charNameLabel.Location = new System.Drawing.Point(25, 142);
-            this.charNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.charNameLabel.Location = new System.Drawing.Point(19, 115);
             this.charNameLabel.Name = "charNameLabel";
-            this.charNameLabel.Size = new System.Drawing.Size(76, 17);
+            this.charNameLabel.Size = new System.Drawing.Size(60, 13);
             this.charNameLabel.TabIndex = 18;
             this.charNameLabel.Text = "Название:";
             // 
             // openSpace
             // 
-            this.openSpace.Location = new System.Drawing.Point(251, 233);
-            this.openSpace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.openSpace.Location = new System.Drawing.Point(188, 189);
             this.openSpace.Name = "openSpace";
-            this.openSpace.Size = new System.Drawing.Size(248, 89);
+            this.openSpace.Size = new System.Drawing.Size(186, 72);
             this.openSpace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.openSpace.TabIndex = 17;
             this.openSpace.TabStop = false;
@@ -271,27 +254,24 @@ namespace WindowsFormsApplication1
             // SpriteNumberLabel
             // 
             this.SpriteNumberLabel.AutoSize = true;
-            this.SpriteNumberLabel.Location = new System.Drawing.Point(9, 188);
-            this.SpriteNumberLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SpriteNumberLabel.Location = new System.Drawing.Point(7, 153);
             this.SpriteNumberLabel.Name = "SpriteNumberLabel";
-            this.SpriteNumberLabel.Size = new System.Drawing.Size(155, 17);
+            this.SpriteNumberLabel.Size = new System.Drawing.Size(119, 13);
             this.SpriteNumberLabel.TabIndex = 16;
             this.SpriteNumberLabel.Text = "Количество спрайтов:";
             // 
             // SpriteNumberTextBox
             // 
-            this.SpriteNumberTextBox.Location = new System.Drawing.Point(13, 208);
-            this.SpriteNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SpriteNumberTextBox.Location = new System.Drawing.Point(10, 169);
             this.SpriteNumberTextBox.Name = "SpriteNumberTextBox";
-            this.SpriteNumberTextBox.Size = new System.Drawing.Size(109, 22);
+            this.SpriteNumberTextBox.Size = new System.Drawing.Size(83, 20);
             this.SpriteNumberTextBox.TabIndex = 15;
             // 
             // OpenButton
             // 
-            this.OpenButton.Location = new System.Drawing.Point(251, 188);
-            this.OpenButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OpenButton.Location = new System.Drawing.Point(188, 153);
             this.OpenButton.Name = "OpenButton";
-            this.OpenButton.Size = new System.Drawing.Size(256, 37);
+            this.OpenButton.Size = new System.Drawing.Size(192, 30);
             this.OpenButton.TabIndex = 14;
             this.OpenButton.Text = "Открыть персонажа";
             this.OpenButton.UseVisualStyleBackColor = true;
@@ -300,85 +280,77 @@ namespace WindowsFormsApplication1
             // LabelPic
             // 
             this.LabelPic.AutoSize = true;
-            this.LabelPic.Location = new System.Drawing.Point(172, 188);
-            this.LabelPic.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelPic.Location = new System.Drawing.Point(129, 153);
             this.LabelPic.Name = "LabelPic";
-            this.LabelPic.Size = new System.Drawing.Size(75, 17);
+            this.LabelPic.Size = new System.Drawing.Size(58, 13);
             this.LabelPic.TabIndex = 12;
             this.LabelPic.Text = "Картинка:";
             // 
             // LabelTime
             // 
             this.LabelTime.AutoSize = true;
-            this.LabelTime.Location = new System.Drawing.Point(25, 112);
-            this.LabelTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelTime.Location = new System.Drawing.Point(19, 91);
             this.LabelTime.Name = "LabelTime";
-            this.LabelTime.Size = new System.Drawing.Size(67, 17);
+            this.LabelTime.Size = new System.Drawing.Size(54, 13);
             this.LabelTime.TabIndex = 11;
             this.LabelTime.Text = "Тайминг:";
             // 
             // LabelDef2
             // 
             this.LabelDef2.AutoSize = true;
-            this.LabelDef2.Location = new System.Drawing.Point(320, 112);
-            this.LabelDef2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelDef2.Location = new System.Drawing.Point(240, 91);
             this.LabelDef2.Name = "LabelDef2";
-            this.LabelDef2.Size = new System.Drawing.Size(18, 17);
+            this.LabelDef2.Size = new System.Drawing.Size(13, 13);
             this.LabelDef2.TabIndex = 10;
             this.LabelDef2.Text = "--";
             // 
             // LabelDef1
             // 
             this.LabelDef1.AutoSize = true;
-            this.LabelDef1.Location = new System.Drawing.Point(320, 76);
-            this.LabelDef1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelDef1.Location = new System.Drawing.Point(240, 62);
             this.LabelDef1.Name = "LabelDef1";
-            this.LabelDef1.Size = new System.Drawing.Size(18, 17);
+            this.LabelDef1.Size = new System.Drawing.Size(13, 13);
             this.LabelDef1.TabIndex = 9;
             this.LabelDef1.Text = "--";
             // 
             // LabelWalls
             // 
             this.LabelWalls.AutoSize = true;
-            this.LabelWalls.Location = new System.Drawing.Point(25, 76);
-            this.LabelWalls.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelWalls.Location = new System.Drawing.Point(19, 62);
             this.LabelWalls.Name = "LabelWalls";
-            this.LabelWalls.Size = new System.Drawing.Size(138, 17);
+            this.LabelWalls.Size = new System.Drawing.Size(107, 13);
             this.LabelWalls.TabIndex = 8;
             this.LabelWalls.Text = "Границы движения:";
             // 
             // TextBoxTime1
             // 
-            this.TextBoxTime1.Location = new System.Drawing.Point(176, 108);
-            this.TextBoxTime1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBoxTime1.Location = new System.Drawing.Point(132, 88);
             this.TextBoxTime1.Name = "TextBoxTime1";
-            this.TextBoxTime1.Size = new System.Drawing.Size(132, 22);
+            this.TextBoxTime1.Size = new System.Drawing.Size(100, 20);
             this.TextBoxTime1.TabIndex = 5;
             // 
             // TextBoxTime2
             // 
-            this.TextBoxTime2.Location = new System.Drawing.Point(345, 108);
-            this.TextBoxTime2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBoxTime2.Location = new System.Drawing.Point(259, 88);
             this.TextBoxTime2.Name = "TextBoxTime2";
-            this.TextBoxTime2.Size = new System.Drawing.Size(132, 22);
+            this.TextBoxTime2.Size = new System.Drawing.Size(100, 20);
             this.TextBoxTime2.TabIndex = 4;
             // 
             // TextBoxWall2
             // 
-            this.TextBoxWall2.Location = new System.Drawing.Point(345, 73);
-            this.TextBoxWall2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBoxWall2.Location = new System.Drawing.Point(259, 59);
             this.TextBoxWall2.Name = "TextBoxWall2";
-            this.TextBoxWall2.Size = new System.Drawing.Size(132, 22);
+            this.TextBoxWall2.Size = new System.Drawing.Size(100, 20);
             this.TextBoxWall2.TabIndex = 3;
             this.TextBoxWall2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxWall1_KeyPress);
             // 
             // TextBoxWall1
             // 
-            this.TextBoxWall1.Location = new System.Drawing.Point(176, 73);
-            this.TextBoxWall1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBoxWall1.Location = new System.Drawing.Point(132, 59);
             this.TextBoxWall1.Name = "TextBoxWall1";
-            this.TextBoxWall1.Size = new System.Drawing.Size(132, 22);
+            this.TextBoxWall1.Size = new System.Drawing.Size(100, 20);
             this.TextBoxWall1.TabIndex = 2;
+            this.TextBoxWall1.TextChanged += new System.EventHandler(this.TextBoxWall1_TextChanged);
             this.TextBoxWall1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxWall1_KeyPress);
             // 
             // ComboBoxMove
@@ -389,30 +361,27 @@ namespace WindowsFormsApplication1
             "По диагонали",
             "Волнами",
             "Кругами"});
-            this.ComboBoxMove.Location = new System.Drawing.Point(143, 15);
-            this.ComboBoxMove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComboBoxMove.Location = new System.Drawing.Point(107, 12);
             this.ComboBoxMove.Name = "ComboBoxMove";
-            this.ComboBoxMove.Size = new System.Drawing.Size(160, 24);
+            this.ComboBoxMove.Size = new System.Drawing.Size(121, 21);
             this.ComboBoxMove.TabIndex = 1;
             this.ComboBoxMove.Text = "Прямо";
             // 
             // LabelMoveType
             // 
             this.LabelMoveType.AutoSize = true;
-            this.LabelMoveType.Location = new System.Drawing.Point(25, 15);
-            this.LabelMoveType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelMoveType.Location = new System.Drawing.Point(19, 12);
             this.LabelMoveType.Name = "LabelMoveType";
-            this.LabelMoveType.Size = new System.Drawing.Size(105, 17);
+            this.LabelMoveType.Size = new System.Drawing.Size(82, 13);
             this.LabelMoveType.TabIndex = 0;
             this.LabelMoveType.Text = "Вид движения:";
             // 
             // SaveMultButton
             // 
             this.SaveMultButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.SaveMultButton.Location = new System.Drawing.Point(0, 431);
-            this.SaveMultButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SaveMultButton.Location = new System.Drawing.Point(0, 350);
             this.SaveMultButton.Name = "SaveMultButton";
-            this.SaveMultButton.Size = new System.Drawing.Size(503, 37);
+            this.SaveMultButton.Size = new System.Drawing.Size(377, 30);
             this.SaveMultButton.TabIndex = 1;
             this.SaveMultButton.Text = "Сохранить мульт";
             this.SaveMultButton.UseVisualStyleBackColor = true;
@@ -422,9 +391,8 @@ namespace WindowsFormsApplication1
             // 
             this.ButtonAddChar.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonAddChar.Location = new System.Drawing.Point(0, 0);
-            this.ButtonAddChar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ButtonAddChar.Name = "ButtonAddChar";
-            this.ButtonAddChar.Size = new System.Drawing.Size(503, 32);
+            this.ButtonAddChar.Size = new System.Drawing.Size(377, 26);
             this.ButtonAddChar.TabIndex = 0;
             this.ButtonAddChar.Text = "Добавить персонажа";
             this.ButtonAddChar.UseVisualStyleBackColor = true;
@@ -436,13 +404,12 @@ namespace WindowsFormsApplication1
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 468);
+            this.ClientSize = new System.Drawing.Size(677, 380);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.RightToLeftLayout = true;
             this.Text = "Свойства персонажа";

@@ -45,11 +45,13 @@ namespace WindowsFormsApplication1
             File.AppendAllText(filename, "    txCreateWindow(" +
                 PictureBoxBackground.Image.Width.ToString() + ", " +
                 PictureBoxBackground.Image.Height.ToString() + ");" + Environment.NewLine);
+            File.AppendAllText(filename, "    double myTime = 0;" + Environment.NewLine);
         }
 
         public static void CloseWhile(string filename)
         {
             File.AppendAllText(filename, Environment.NewLine);
+            File.AppendAllText(filename, "        myTime += 0.01;" + Environment.NewLine);
             File.AppendAllText(filename, "        txSleep(10);" + Environment.NewLine);
             File.AppendAllText(filename, "    }" + Environment.NewLine);
         }
