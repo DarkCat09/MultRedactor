@@ -13,7 +13,7 @@ namespace WindowsFormsApplication1
         {
             File.AppendAllText(filename, "    Person " + name + ";" + Environment.NewLine);
             File.AppendAllText(filename, Environment.NewLine);
-            File.AppendAllText(filename, "    " + name + ".texture = txLoadImage(\"Pictures\\\\Personaj.bmp\");" + Environment.NewLine);
+            File.AppendAllText(filename, "    " + name + ".texture = txLoadImage(\"Pictures\\\\" + Path.GetFileName(p.adress) + "\");" + Environment.NewLine);
             File.AppendAllText(filename, Environment.NewLine);
             File.AppendAllText(filename, "    " + name + ".x = 50;" + Environment.NewLine);
             File.AppendAllText(filename, "    " + name + ".y = 50;" + Environment.NewLine);
@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
 
         public static void MovePerson(string filename, string name, Person p)
         {
-            File.AppendAllText(filename, "        " + name + ".angle++" + Environment.NewLine);
+            File.AppendAllText(filename, "        " + name + ".angle++;" + Environment.NewLine);
             File.AppendAllText(filename, "        " + name + ".x = 500 + 200 * cos (" + name + ".angle / 10);" + Environment.NewLine);
             File.AppendAllText(filename, "        " + name + ".y = 300 + 200 * sin (" + name + ".angle / 10);" + Environment.NewLine);
             File.AppendAllText(filename, "        txTransparentBlt(txDC(), " + name + ".x, " + name + ".y, " + p.width + "," + p.height + "," + name + ".texture, " + p.width + "/" + p.sprite + " * " + name + ".nomer_kadra, 0, RGB(0, 255, 255));" + Environment.NewLine);

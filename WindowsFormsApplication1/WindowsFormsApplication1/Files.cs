@@ -38,7 +38,7 @@ namespace WindowsFormsApplication1
             File.AppendAllText(filename,                                   Environment.NewLine);
         }
 
-        public static void OpenMain(string filename, PictureBox PictureBoxBackground)
+        public static void OpenMain(string filename, PictureBox PictureBoxBackground, String adressBackground)
         {
             File.AppendAllText(filename, "int main()" + Environment.NewLine);
             File.AppendAllText(filename, "{" + Environment.NewLine);
@@ -46,6 +46,7 @@ namespace WindowsFormsApplication1
                 PictureBoxBackground.Image.Width.ToString() + ", " +
                 PictureBoxBackground.Image.Height.ToString() + ");" + Environment.NewLine);
             File.AppendAllText(filename, "    double myTime = 0;" + Environment.NewLine);
+            File.AppendAllText(filename, "    HDC texture = txLoadImage(\"Pictures\\\\" + Path.GetFileName(adressBackground) + "\");" + Environment.NewLine);
         }
 
         public static void CloseWhile(string filename)
@@ -63,11 +64,12 @@ namespace WindowsFormsApplication1
             File.AppendAllText(filename, "    {" + Environment.NewLine);
             File.AppendAllText(filename, "        txSetColor(TX_RED);" + Environment.NewLine);
             File.AppendAllText(filename, "        txSetFillColor(TX_RED);" + Environment.NewLine);
-            File.AppendAllText(filename, "        txRectangle(0, 0, txGetExtentX(), txGetExtentY());" + Environment.NewLine);
+            File.AppendAllText(filename, "        txBitBlt(txDC(), 0, 0, txGetExtentX(), txGetExtentY(), texture, 0, 0);" + Environment.NewLine);
         }       
     
         public static void Ending(string filename)
         {
+            File.AppendAllText(filename, "   txDeleteDC(texture);" + Environment.NewLine);
             File.AppendAllText(filename, "   return 0;" + Environment.NewLine);
             File.AppendAllText(filename, "}" + Environment.NewLine);
         }

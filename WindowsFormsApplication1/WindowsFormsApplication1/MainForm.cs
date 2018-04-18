@@ -17,6 +17,7 @@ namespace WindowsFormsApplication1
         int nomerPersa = 0;
         int pNomer = 0;
         PictureBox[] pic1 = new PictureBox[1000];
+        String adressBackground = "";
 
         public MainForm()
         {
@@ -212,6 +213,7 @@ namespace WindowsFormsApplication1
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             PictureBoxBackground.Image = Image.FromFile(openFileDialog1.FileName);
+            adressBackground = openFileDialog1.FileName;
         }
 
         private void SaveMultButton_Click(object sender, EventArgs e)
@@ -228,9 +230,10 @@ namespace WindowsFormsApplication1
                 {
                     Directory.CreateDirectory(adres_papki);
                 }
+                File.Copy(adressBackground, adres_papki + "\\" + Path.GetFileName(adressBackground), true);
 
                 Files.CreateStruct(filename);
-                Files.OpenMain(filename, PictureBoxBackground);
+                Files.OpenMain(filename, PictureBoxBackground, adressBackground);
 
                 for (int nomer = 0; nomer < nomerPersa; nomer++)
                 {
