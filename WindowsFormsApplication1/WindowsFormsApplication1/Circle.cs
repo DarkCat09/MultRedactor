@@ -11,8 +11,8 @@ namespace WindowsFormsApplication1
     {
         public static void CreatePerson(string filename, string name, Person p)
         {
-            File.AppendAllText(filename, "    Person " + name + ";" + Environment.NewLine);
             File.AppendAllText(filename, Environment.NewLine);
+            File.AppendAllText(filename, "    Person " + name + ";" + Environment.NewLine);
             File.AppendAllText(filename, "    " + name + ".texture = txLoadImage(\"Pictures\\\\" + Path.GetFileName(p.adress) + "\");" + Environment.NewLine);
             File.AppendAllText(filename, Environment.NewLine);
             File.AppendAllText(filename, "   " + name + ".x = " + p.x1 + "; " + Environment.NewLine);
@@ -34,7 +34,7 @@ namespace WindowsFormsApplication1
                 p.width + "/" + p.sprite + ", " + 
                 p.height + "," + 
                 name + ".texture, " +
-                p.width + "/" + p.sprite + " * " + name + ".nomer_kadra, 0, RGB(0, 255, 255));" + Environment.NewLine);
+                p.width + "/" + p.sprite + " * " + name + ".nomer_kadra, 255, RGB(0, 255, 255));" + Environment.NewLine);
             File.AppendAllText(filename, Environment.NewLine);
             File.AppendAllText(filename, "            " + name + ".nomer_kadra++;" + Environment.NewLine);
             File.AppendAllText(filename, Environment.NewLine);
@@ -42,7 +42,7 @@ namespace WindowsFormsApplication1
             File.AppendAllText(filename, "            {" + Environment.NewLine);
             File.AppendAllText(filename, "               " + name + ".nomer_kadra = 0;" + Environment.NewLine);
             File.AppendAllText(filename, "            }" + Environment.NewLine);
-            File.AppendAllText(filename, "        }" + Environment.NewLine)
+            File.AppendAllText(filename, "        }" + Environment.NewLine);
             File.AppendAllText(filename, Environment.NewLine);
         }
     }

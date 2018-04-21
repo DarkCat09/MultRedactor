@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Circle.cs" />
     <Compile Include="Files.cs" />
+    <Compile Include="Line.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

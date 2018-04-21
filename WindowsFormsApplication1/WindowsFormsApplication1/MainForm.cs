@@ -168,34 +168,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void old_place(string filename, string name, Person p)
-        {
-            //ctrl-c ctrl-v texture n_sprites x2 y2
-            File.AppendAllText(filename, "    Person " + name + ";" + Environment.NewLine);
-            File.AppendAllText(filename, Environment.NewLine);
-            File.AppendAllText(filename, "   " + name + ".x = " + p.x1 + "; " + Environment.NewLine);
-            File.AppendAllText(filename, "   " + name + ".y = " + p.y1 + "; " + Environment.NewLine);
-            File.AppendAllText(filename, "   " + name + ".x2 = " + p.x2 + "; " + Environment.NewLine);
-            File.AppendAllText(filename, "   " + name + ".y2 = " + p.y2 + "; " + Environment.NewLine);
-            File.AppendAllText(filename, "   " + name + ".nomer_kadra = 0; " + Environment.NewLine);
-            File.AppendAllText(filename, "   " + name + ".texture = txLoadImage(\"Pictures\\\\" + Path.GetFileName(p.adress) + "\"); " + Environment.NewLine);
-        }
-
-        private void go_pryamo(string filename, string name, Person p)
-        {
-            File.AppendAllText(filename, "        if ((myTime >= " + p.time1 + ") && (myTime <= " + p.time2 + ")) {" + Environment.NewLine);
-            File.AppendAllText(filename, "            txTransparentBlt(txDC(), " + name + ".x, " + name + ".y, 55, 86, " + name + ".texture, 55 * " + name + ".nomer_kadra, 0, RGB(0, 255, 255)); " + Environment.NewLine);
-            File.AppendAllText(filename, "            " + name + ".x+= (" + name + ".x2 - " + name + ".x) / (" + p.time2 + "-" + p.time1 + ");" + Environment.NewLine);
-            File.AppendAllText(filename, "            " + name + ".y+= (" + name + ".y2 - " + name + ".y) / (" + p.time2 + "-" + p.time1 + ");" + Environment.NewLine);
-            File.AppendAllText(filename, "            " + name + ".nomer_kadra++;" + Environment.NewLine);
-            File.AppendAllText(filename, "            if (" + name + ".nomer_kadra > " + TextBoxWall1.Text + ") " + Environment.NewLine);
-            File.AppendAllText(filename, "            {  " + Environment.NewLine);
-            File.AppendAllText(filename, "                " + name + ".nomer_kadra = 0;" + Environment.NewLine);
-            File.AppendAllText(filename, "            }" + Environment.NewLine);
-            File.AppendAllText(filename, Environment.NewLine);
-            File.AppendAllText(filename, "        }" + Environment.NewLine);
-        }
-
         private void OpenAddCharClick(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
@@ -292,7 +264,7 @@ namespace WindowsFormsApplication1
 
                     if (persons[nomer].moveside == "Прямо")
                     {
-                        old_place(filename, Person.PersonName(nomer), persons[nomer]);
+                        Line.CreatePerson(filename, Person.PersonName(nomer), persons[nomer]);
                     }
                     else if (persons[nomer].moveside == "Волнами")
                     {
@@ -304,7 +276,7 @@ namespace WindowsFormsApplication1
                     }
                     else if (persons[nomer].moveside == "Диагонально")
                     {
-                        old_place(filename, Person.PersonName(nomer), persons[nomer]);
+                        Line.CreatePerson(filename, Person.PersonName(nomer), persons[nomer]);
                     }
                 }
 
@@ -314,7 +286,7 @@ namespace WindowsFormsApplication1
                 {
                     if (persons[nomer].moveside == "Прямо")
                     {
-                        go_pryamo(filename, Person.PersonName(nomer), persons[nomer]);
+                        Line.MovePerson(filename, Person.PersonName(nomer), persons[nomer]);
                     }
                     else if (persons[nomer].moveside == "Волнами")
                     {
@@ -326,7 +298,7 @@ namespace WindowsFormsApplication1
                     }
                     else if (persons[nomer].moveside == "Диагонально")
                     {
-                        go_pryamo(filename, Person.PersonName(nomer), persons[nomer]);
+                        Line.MovePerson(filename, Person.PersonName(nomer), persons[nomer]);
                     }
                 }
 

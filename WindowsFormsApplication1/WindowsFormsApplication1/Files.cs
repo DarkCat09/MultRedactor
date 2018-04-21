@@ -52,8 +52,8 @@ namespace WindowsFormsApplication1
         public static void CloseWhile(string filename)
         {
             File.AppendAllText(filename, Environment.NewLine);
-            File.AppendAllText(filename, "        myTime += 0.01;" + Environment.NewLine);
-            File.AppendAllText(filename, "        txSleep(10);" + Environment.NewLine);
+            File.AppendAllText(filename, "        myTime += 0.05;" + Environment.NewLine);
+            File.AppendAllText(filename, "        txSleep(50);" + Environment.NewLine);
             File.AppendAllText(filename, "    }" + Environment.NewLine);
         }
 
@@ -69,8 +69,8 @@ namespace WindowsFormsApplication1
     
         public static void Ending(string filename)
         {
-            File.AppendAllText(filename, "   txDeleteDC(texture);" + Environment.NewLine);
-            File.AppendAllText(filename, "   return 0;" + Environment.NewLine);
+            File.AppendAllText(filename, "    txDeleteDC(texture);" + Environment.NewLine);
+            File.AppendAllText(filename, "    return 0;" + Environment.NewLine);
             File.AppendAllText(filename, "}" + Environment.NewLine);
         }
     }
