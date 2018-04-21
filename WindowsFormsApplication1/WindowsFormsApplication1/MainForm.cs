@@ -31,20 +31,27 @@ namespace WindowsFormsApplication1
         {
             panel3.Visible = true;
             pNomer = -120;
-        }     
+        }
 
         private void DeletePics(string filename, int nomer)
         {
             File.AppendAllText(filename, Environment.NewLine);
-            
+
             for (int n1 = 0; n1 < nomer; n1++)
             {
                 File.AppendAllText(filename, "    txDeleteDC(" + Person.PersonName(n1) + ".texture);" + Environment.NewLine);
             }
-        }      
+        }
 
         private void SaveCharButtonClick(object sender, EventArgs e)
         {
+            if (panel3.Visible == false)
+            {
+                MessageBox.Show("Где параметры? Покажи мне, ткни мне в них!");
+                return;
+            }
+
+            panel3.Visible = true;
             if (pNomer == -120)
             {
                 persons[nomerPersa].l1 = new Label();
@@ -80,7 +87,7 @@ namespace WindowsFormsApplication1
                 persons[nomerPersa].b1.MouseClick +=
                     new MouseEventHandler(this.button1_Click_2);
                 this.panel1.Controls.Add(persons[nomerPersa].b1);
-                
+
                 ToolTip tView = new ToolTip();
                 tView.IsBalloon = true;
                 tView.InitialDelay = 0;
@@ -218,8 +225,52 @@ namespace WindowsFormsApplication1
 
         private void SaveMultButton_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK &&
-                PictureBoxBackground.Image != null)
+            if (PictureBoxBackground.Image == null)
+            {
+                MessageBox.Show("Что ты собрался выводить то, поехавший (фон)?");
+                return;
+            }
+
+            for (int nomer = 0; nomer < nomerPersa; nomer++)
+            {
+                if (String.IsNullOrEmpty(persons[nomer].adress))
+                {
+                    MessageBox.Show("Картинка №" + (nomer + 1).ToString() + " пустая");
+                    return;
+                }
+                if (String.IsNullOrEmpty(persons[nomer].x1))
+                {
+                    MessageBox.Show("Первая координата персонажа №" + (nomer + 1).ToString() + " пустая");
+                    return;
+                }
+                if (String.IsNullOrEmpty(persons[nomer].y1))
+                {
+                    MessageBox.Show("Первая координата персонажа №" + (nomer + 1).ToString() + " пустая");
+                    return;
+                }
+                if (String.IsNullOrEmpty(persons[nomer].y2))
+                {
+                    MessageBox.Show("Вторая координата персонажа №" + (nomer + 1).ToString() + " пустая");
+                    return;
+                }
+                if (String.IsNullOrEmpty(persons[nomer].x2))
+                {
+                    MessageBox.Show("Вторая координата персонажа №" + (nomer + 1).ToString() + " пустая");
+                    return;
+                }
+                if (String.IsNullOrEmpty(persons[nomer].time1))
+                {
+                    MessageBox.Show("Первая координата времени №" + (nomer + 1).ToString() + " пустая");
+                    return;
+                }
+                if (String.IsNullOrEmpty(persons[nomer].time2))
+                {
+                    MessageBox.Show("Вторая координата времени №" + (nomer + 1).ToString() + " пустая");
+                    return;
+                }
+            }
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string filename = saveFileDialog1.FileName;
 
@@ -282,7 +333,7 @@ namespace WindowsFormsApplication1
                 Files.CloseWhile(filename);
                 DeletePics(filename, nomerPersa);
                 Files.Ending(filename);
-                
+
                 MessageBox.Show("Successfully");
             }
         }
@@ -339,5 +390,24 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+            ToolTip tView = new ToolTip();
+            tView.IsBalloon = true;
+            tView.InitialDelay = 0;
+            tView.ShowAlways = true;
+            tView.AutoPopDelay = 2000;
+            tView.SetToolTip(TextBoxWall1, "x.y");
+
+            ToolTip tView2 = new ToolTip();
+            tView2.IsBalloon = true;
+            tView2.InitialDelay = 0;
+            tView2.ShowAlways = true;
+            tView2.AutoPopDelay = 2000;
+            tView2.SetToolTip(TextBoxWall2, "x.y");
+        }
+
     }
 }

@@ -413,6 +413,7 @@ namespace WindowsFormsApplication1
             this.Name = "MainForm";
             this.RightToLeftLayout = true;
             this.Text = "Свойства персонажа";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBackground)).EndInit();
