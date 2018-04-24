@@ -253,14 +253,24 @@ namespace WindowsFormsApplication1
                 {
                     Directory.CreateDirectory(adres_papki);
                 }
-                File.Copy(adressBackground, adres_papki + "\\" + Path.GetFileName(adressBackground), true);
+
+                if (adressBackground != adres_papki + "\\" + Path.GetFileName(adressBackground))
+                {
+                    File.Copy(adressBackground, adres_papki + "\\" + Path.GetFileName(adressBackground), true);
+                }
 
                 Files.CreateStruct(filename);
                 Files.OpenMain(filename, PictureBoxBackground, adressBackground);
 
                 for (int nomer = 0; nomer < nomerPersa; nomer++)
                 {
-                    File.Copy(persons[nomer].adress, adres_papki + "\\" + Path.GetFileName(persons[nomer].adress), true);
+
+                    if (adres_papki == adres_papki + "\\" + Path.GetFileName(persons[nomer].adress))
+                    {
+                        File.Copy(persons[nomer].adress, adres_papki + "\\" + Path.GetFileName(persons[nomer].adress), true);
+                    }
+
+                   // File.Copy(persons[nomer].adress, adres_papki + "\\" + Path.GetFileName(persons[nomer].adress), true);
 
                     if (persons[nomer].moveside == "Прямо")
                     {
