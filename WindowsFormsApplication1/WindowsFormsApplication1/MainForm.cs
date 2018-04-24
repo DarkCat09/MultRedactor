@@ -121,6 +121,7 @@ namespace WindowsFormsApplication1
                 persons[nomerPersa].moveside = ComboBoxMove.Text;
                 persons[nomerPersa].nomer = nomerPersa;
                 persons[nomerPersa].charname = charNameBox.Text;
+                persons[nomerPersa].circles = textBox1.Text;
                 persons[nomerPersa].l2.Text = charNameBox.Text;
 
                 String[] coordinatyNachala = TextBoxWall1.Text.Split(new String[] { "," }, StringSplitOptions.None);
@@ -165,6 +166,7 @@ namespace WindowsFormsApplication1
                 }
 
                 persons[pNomer].charname = charNameBox.Text;
+                persons[pNomer].circles = textBox1.Text;
                 persons[pNomer].l2.Text = charNameBox.Text;
             }
 
@@ -344,6 +346,7 @@ namespace WindowsFormsApplication1
                     ComboBoxMove.Text = persons[nomer].moveside;
                     pNomer = persons[nomer].nomer;
                     charNameBox.Text = persons[nomer].charname;
+                    textBox1.Text = persons[nomer].circles;
 
                     if (!String.IsNullOrEmpty(persons[nomer].adress))
                     {
@@ -399,7 +402,43 @@ namespace WindowsFormsApplication1
             tView2.ShowAlways = true;
             tView2.AutoPopDelay = 2000;
             tView2.SetToolTip(TextBoxWall2, "x.y");
+
+            ComboBoxMove_SelectedIndexChanged(sender, e);
+            textBox1_TextChanged(sender, e);
         }
 
+        private void ComboBoxMove_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ComboBoxMove.Text == "Кругами")
+            {
+                textBox1.Visible = true;
+                label2.Visible = true;
+            }
+            else
+            {
+                textBox1.Visible = false;
+                label2.Visible = false;
+            }
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void charNameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
