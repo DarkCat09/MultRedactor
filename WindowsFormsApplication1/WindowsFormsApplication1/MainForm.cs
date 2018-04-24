@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +16,7 @@ namespace WindowsFormsApplication1
         int yPersa = 300;
         int nomerPersa = 0;
         int pNomer = 0;
+        int maxTime = 0;
         PictureBox[] pic1 = new PictureBox[1000];
         String adressBackground = "";
 
@@ -166,6 +167,16 @@ namespace WindowsFormsApplication1
                 persons[pNomer].charname = charNameBox.Text;
                 persons[pNomer].l2.Text = charNameBox.Text;
             }
+
+            for (int nomer = 0; nomer < nomerPersa; nomer++)
+            {
+                if (Convert.ToInt32(persons[nomer].time2) > maxTime)
+                {
+                    maxTime = Convert.ToInt32(persons[nomer].time2);
+                }
+            }
+
+            LabelLengh.Text = "Длительность: " + maxTime.ToString() + " секунд";
         }
 
         private void OpenAddCharClick(object sender, EventArgs e)
@@ -258,19 +269,18 @@ namespace WindowsFormsApplication1
                 {
                     File.Copy(adressBackground, adres_papki + "\\" + Path.GetFileName(adressBackground), true);
                 }
-
+ 
                 Files.CreateStruct(filename);
                 Files.OpenMain(filename, PictureBoxBackground, adressBackground);
-
+ 
                 for (int nomer = 0; nomer < nomerPersa; nomer++)
                 {
+                    File.Copy(persons[nomer].adress, adres_papki + "\\" + Path.GetFileName(persons[nomer].adress), true);
 
                     if (adres_papki == adres_papki + "\\" + Path.GetFileName(persons[nomer].adress))
                     {
                         File.Copy(persons[nomer].adress, adres_papki + "\\" + Path.GetFileName(persons[nomer].adress), true);
                     }
-
-                   // File.Copy(persons[nomer].adress, adres_papki + "\\" + Path.GetFileName(persons[nomer].adress), true);
 
                     if (persons[nomer].moveside == "Прямо")
                     {
@@ -290,7 +300,7 @@ namespace WindowsFormsApplication1
                     }
                 }
 
-                Files.OpenWhile(filename);
+                Files.OpenWhile(filename, maxTime);
 
                 for (int nomer = 0; nomer < nomerPersa; nomer++)
                 {
