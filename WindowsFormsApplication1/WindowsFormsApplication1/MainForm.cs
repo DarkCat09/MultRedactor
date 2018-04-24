@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +16,7 @@ namespace WindowsFormsApplication1
         int yPersa = 300;
         int nomerPersa = 0;
         int pNomer = 0;
+        int maxTime = 0;
         PictureBox[] pic1 = new PictureBox[1000];
         String adressBackground = "";
 
@@ -120,6 +121,7 @@ namespace WindowsFormsApplication1
                 persons[nomerPersa].moveside = ComboBoxMove.Text;
                 persons[nomerPersa].nomer = nomerPersa;
                 persons[nomerPersa].charname = charNameBox.Text;
+                persons[nomerPersa].circles = textBox1.Text;
                 persons[nomerPersa].l2.Text = charNameBox.Text;
 
                 String[] coordinatyNachala = TextBoxWall1.Text.Split(new String[] { "," }, StringSplitOptions.None);
@@ -164,8 +166,19 @@ namespace WindowsFormsApplication1
                 }
 
                 persons[pNomer].charname = charNameBox.Text;
+                persons[pNomer].circles = textBox1.Text;
                 persons[pNomer].l2.Text = charNameBox.Text;
             }
+
+            for (int nomer = 0; nomer < nomerPersa; nomer++)
+            {
+                if (Convert.ToInt32(persons[nomer].time2) > maxTime)
+                {
+                    maxTime = Convert.ToInt32(persons[nomer].time2);
+                }
+            }
+
+            LabelLengh.Text = "Длительность: " + maxTime.ToString() + " секунд";
         }
 
         private void OpenAddCharClick(object sender, EventArgs e)
@@ -253,14 +266,23 @@ namespace WindowsFormsApplication1
                 {
                     Directory.CreateDirectory(adres_papki);
                 }
-                File.Copy(adressBackground, adres_papki + "\\" + Path.GetFileName(adressBackground), true);
 
+                if (adressBackground != adres_papki + "\\" + Path.GetFileName(adressBackground))
+                {
+                    File.Copy(adressBackground, adres_papki + "\\" + Path.GetFileName(adressBackground), true);
+                }
+ 
                 Files.CreateStruct(filename);
                 Files.OpenMain(filename, PictureBoxBackground, adressBackground);
-
+ 
                 for (int nomer = 0; nomer < nomerPersa; nomer++)
                 {
                     File.Copy(persons[nomer].adress, adres_papki + "\\" + Path.GetFileName(persons[nomer].adress), true);
+
+                    if (adres_papki == adres_papki + "\\" + Path.GetFileName(persons[nomer].adress))
+                    {
+                        File.Copy(persons[nomer].adress, adres_papki + "\\" + Path.GetFileName(persons[nomer].adress), true);
+                    }
 
                     if (persons[nomer].moveside == "Прямо")
                     {
@@ -280,7 +302,7 @@ namespace WindowsFormsApplication1
                     }
                 }
 
-                Files.OpenWhile(filename);
+                Files.OpenWhile(filename, maxTime);
 
                 for (int nomer = 0; nomer < nomerPersa; nomer++)
                 {
@@ -324,6 +346,7 @@ namespace WindowsFormsApplication1
                     ComboBoxMove.Text = persons[nomer].moveside;
                     pNomer = persons[nomer].nomer;
                     charNameBox.Text = persons[nomer].charname;
+                    textBox1.Text = persons[nomer].circles;
 
                     if (!String.IsNullOrEmpty(persons[nomer].adress))
                     {
@@ -379,7 +402,43 @@ namespace WindowsFormsApplication1
             tView2.ShowAlways = true;
             tView2.AutoPopDelay = 2000;
             tView2.SetToolTip(TextBoxWall2, "x.y");
+
+            ComboBoxMove_SelectedIndexChanged(sender, e);
+            textBox1_TextChanged(sender, e);
         }
 
+        private void ComboBoxMove_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ComboBoxMove.Text == "Кругами")
+            {
+                textBox1.Visible = true;
+                label2.Visible = true;
+            }
+            else
+            {
+                textBox1.Visible = false;
+                label2.Visible = false;
+            }
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void charNameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

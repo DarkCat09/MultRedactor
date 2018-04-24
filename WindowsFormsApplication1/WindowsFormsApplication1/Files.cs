@@ -57,10 +57,10 @@ namespace WindowsFormsApplication1
             File.AppendAllText(filename, "    }" + Environment.NewLine);
         }
 
-        public static void OpenWhile(string filename)
+        public static void OpenWhile(string filename, int maxTime)
         {
             File.AppendAllText(filename, Environment.NewLine);
-            File.AppendAllText(filename, "    while (!GetAsyncKeyState(VK_ESCAPE))" + Environment.NewLine);
+            File.AppendAllText(filename, "    while (myTime <= " + maxTime + ")" + Environment.NewLine);
             File.AppendAllText(filename, "    {" + Environment.NewLine);
             File.AppendAllText(filename, "        txSetColor(TX_RED);" + Environment.NewLine);
             File.AppendAllText(filename, "        txSetFillColor(TX_RED);" + Environment.NewLine);

@@ -64,6 +64,8 @@ namespace WindowsFormsApplication1
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.leftPanel.SuspendLayout();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBackground)).BeginInit();
             this.rightPanel.SuspendLayout();
             this.personPanel.SuspendLayout();
@@ -76,9 +78,9 @@ namespace WindowsFormsApplication1
             this.LabelData.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelData.Location = new System.Drawing.Point(0, 9);
             this.LabelData.Name = "LabelData";
-            this.LabelData.Size = new System.Drawing.Size(224, 23);
+            this.LabelData.Size = new System.Drawing.Size(234, 23);
             this.LabelData.TabIndex = 0;
-            this.LabelData.Text = "Данные о мултфильме:";
+            this.LabelData.Text = "Данные о мультфильме:";
             // 
             // LabelLengh
             // 
@@ -225,18 +227,20 @@ namespace WindowsFormsApplication1
             this.personPanel.Size = new System.Drawing.Size(377, 324);
             this.personPanel.TabIndex = 2;
             this.personPanel.Visible = false;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // charNameBox
             // 
-            this.charNameBox.Location = new System.Drawing.Point(85, 115);
+            this.charNameBox.Location = new System.Drawing.Point(85, 88);
             this.charNameBox.Name = "charNameBox";
             this.charNameBox.Size = new System.Drawing.Size(138, 20);
             this.charNameBox.TabIndex = 19;
+            this.charNameBox.TextChanged += new System.EventHandler(this.charNameBox_TextChanged);
             // 
             // charNameLabel
             // 
             this.charNameLabel.AutoSize = true;
-            this.charNameLabel.Location = new System.Drawing.Point(19, 115);
+            this.charNameLabel.Location = new System.Drawing.Point(19, 88);
             this.charNameLabel.Name = "charNameLabel";
             this.charNameLabel.Size = new System.Drawing.Size(60, 13);
             this.charNameLabel.TabIndex = 18;
@@ -244,7 +248,7 @@ namespace WindowsFormsApplication1
             // 
             // openSpace
             // 
-            this.openSpace.Location = new System.Drawing.Point(188, 189);
+            this.openSpace.Location = new System.Drawing.Point(185, 193);
             this.openSpace.Name = "openSpace";
             this.openSpace.Size = new System.Drawing.Size(186, 72);
             this.openSpace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -254,7 +258,7 @@ namespace WindowsFormsApplication1
             // SpriteNumberLabel
             // 
             this.SpriteNumberLabel.AutoSize = true;
-            this.SpriteNumberLabel.Location = new System.Drawing.Point(7, 153);
+            this.SpriteNumberLabel.Location = new System.Drawing.Point(4, 157);
             this.SpriteNumberLabel.Name = "SpriteNumberLabel";
             this.SpriteNumberLabel.Size = new System.Drawing.Size(119, 13);
             this.SpriteNumberLabel.TabIndex = 16;
@@ -262,14 +266,14 @@ namespace WindowsFormsApplication1
             // 
             // SpriteNumberTextBox
             // 
-            this.SpriteNumberTextBox.Location = new System.Drawing.Point(10, 169);
+            this.SpriteNumberTextBox.Location = new System.Drawing.Point(7, 173);
             this.SpriteNumberTextBox.Name = "SpriteNumberTextBox";
             this.SpriteNumberTextBox.Size = new System.Drawing.Size(83, 20);
             this.SpriteNumberTextBox.TabIndex = 15;
             // 
             // OpenButton
             // 
-            this.OpenButton.Location = new System.Drawing.Point(188, 153);
+            this.OpenButton.Location = new System.Drawing.Point(185, 157);
             this.OpenButton.Name = "OpenButton";
             this.OpenButton.Size = new System.Drawing.Size(192, 30);
             this.OpenButton.TabIndex = 14;
@@ -280,7 +284,7 @@ namespace WindowsFormsApplication1
             // LabelPic
             // 
             this.LabelPic.AutoSize = true;
-            this.LabelPic.Location = new System.Drawing.Point(129, 153);
+            this.LabelPic.Location = new System.Drawing.Point(126, 157);
             this.LabelPic.Name = "LabelPic";
             this.LabelPic.Size = new System.Drawing.Size(58, 13);
             this.LabelPic.TabIndex = 12;
@@ -289,7 +293,7 @@ namespace WindowsFormsApplication1
             // LabelTime
             // 
             this.LabelTime.AutoSize = true;
-            this.LabelTime.Location = new System.Drawing.Point(19, 91);
+            this.LabelTime.Location = new System.Drawing.Point(19, 64);
             this.LabelTime.Name = "LabelTime";
             this.LabelTime.Size = new System.Drawing.Size(54, 13);
             this.LabelTime.TabIndex = 11;
@@ -298,7 +302,7 @@ namespace WindowsFormsApplication1
             // LabelDef2
             // 
             this.LabelDef2.AutoSize = true;
-            this.LabelDef2.Location = new System.Drawing.Point(240, 91);
+            this.LabelDef2.Location = new System.Drawing.Point(240, 64);
             this.LabelDef2.Name = "LabelDef2";
             this.LabelDef2.Size = new System.Drawing.Size(13, 13);
             this.LabelDef2.TabIndex = 10;
@@ -307,7 +311,7 @@ namespace WindowsFormsApplication1
             // LabelDef1
             // 
             this.LabelDef1.AutoSize = true;
-            this.LabelDef1.Location = new System.Drawing.Point(240, 62);
+            this.LabelDef1.Location = new System.Drawing.Point(240, 35);
             this.LabelDef1.Name = "LabelDef1";
             this.LabelDef1.Size = new System.Drawing.Size(13, 13);
             this.LabelDef1.TabIndex = 9;
@@ -316,7 +320,7 @@ namespace WindowsFormsApplication1
             // LabelWalls
             // 
             this.LabelWalls.AutoSize = true;
-            this.LabelWalls.Location = new System.Drawing.Point(19, 62);
+            this.LabelWalls.Location = new System.Drawing.Point(19, 35);
             this.LabelWalls.Name = "LabelWalls";
             this.LabelWalls.Size = new System.Drawing.Size(107, 13);
             this.LabelWalls.TabIndex = 8;
@@ -324,21 +328,21 @@ namespace WindowsFormsApplication1
             // 
             // TextBoxTime1
             // 
-            this.TextBoxTime1.Location = new System.Drawing.Point(132, 88);
+            this.TextBoxTime1.Location = new System.Drawing.Point(132, 61);
             this.TextBoxTime1.Name = "TextBoxTime1";
             this.TextBoxTime1.Size = new System.Drawing.Size(100, 20);
             this.TextBoxTime1.TabIndex = 5;
             // 
             // TextBoxTime2
             // 
-            this.TextBoxTime2.Location = new System.Drawing.Point(259, 88);
+            this.TextBoxTime2.Location = new System.Drawing.Point(259, 61);
             this.TextBoxTime2.Name = "TextBoxTime2";
             this.TextBoxTime2.Size = new System.Drawing.Size(100, 20);
             this.TextBoxTime2.TabIndex = 4;
             // 
             // TextBoxWall2
             // 
-            this.TextBoxWall2.Location = new System.Drawing.Point(259, 59);
+            this.TextBoxWall2.Location = new System.Drawing.Point(259, 32);
             this.TextBoxWall2.Name = "TextBoxWall2";
             this.TextBoxWall2.Size = new System.Drawing.Size(100, 20);
             this.TextBoxWall2.TabIndex = 3;
@@ -346,7 +350,7 @@ namespace WindowsFormsApplication1
             // 
             // TextBoxWall1
             // 
-            this.TextBoxWall1.Location = new System.Drawing.Point(132, 59);
+            this.TextBoxWall1.Location = new System.Drawing.Point(132, 32);
             this.TextBoxWall1.Name = "TextBoxWall1";
             this.TextBoxWall1.Size = new System.Drawing.Size(100, 20);
             this.TextBoxWall1.TabIndex = 2;
@@ -361,16 +365,17 @@ namespace WindowsFormsApplication1
             "Диагонально",
             "Волнами",
             "Кругами"});
-            this.ComboBoxMove.Location = new System.Drawing.Point(107, 12);
+            this.ComboBoxMove.Location = new System.Drawing.Point(111, 3);
             this.ComboBoxMove.Name = "ComboBoxMove";
             this.ComboBoxMove.Size = new System.Drawing.Size(121, 21);
             this.ComboBoxMove.TabIndex = 1;
             this.ComboBoxMove.Text = "Прямо";
+            this.ComboBoxMove.SelectedIndexChanged += new System.EventHandler(this.ComboBoxMove_SelectedIndexChanged);
             // 
             // LabelMoveType
             // 
             this.LabelMoveType.AutoSize = true;
-            this.LabelMoveType.Location = new System.Drawing.Point(19, 12);
+            this.LabelMoveType.Location = new System.Drawing.Point(23, 3);
             this.LabelMoveType.Name = "LabelMoveType";
             this.LabelMoveType.Size = new System.Drawing.Size(82, 13);
             this.LabelMoveType.TabIndex = 0;
@@ -401,6 +406,24 @@ namespace WindowsFormsApplication1
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(85, 114);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(138, 20);
+            this.textBox1.TabIndex = 21;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Кол-во кругов:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // MainForm
             // 
@@ -462,5 +485,7 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.Label Char_Stats;
         private System.Windows.Forms.TextBox charNameBox;
         private System.Windows.Forms.Label charNameLabel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

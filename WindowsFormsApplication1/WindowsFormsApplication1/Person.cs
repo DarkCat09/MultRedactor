@@ -31,6 +31,7 @@ namespace WindowsFormsApplication1
         public String charname;
         public String height;
         public String width;
+        public String circles;
 
         public static string PersonName(int nomer)
         {
