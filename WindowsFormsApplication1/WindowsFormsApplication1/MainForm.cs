@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
 
         private void buttonAddCharClick(object sender, EventArgs e)
         {
-            panel3.Visible = true;
+            personPanel.Visible = true;
             pNomer = -120;
         }
 
@@ -46,13 +46,13 @@ namespace WindowsFormsApplication1
 
         private void SaveCharButtonClick(object sender, EventArgs e)
         {
-            if (panel3.Visible == false)
+            if (personPanel.Visible == false)
             {
                 MessageBox.Show("Где параметры? Покажи мне, ткни мне в них!");
                 return;
             }
 
-            panel3.Visible = true;
+            personPanel.Visible = true;
             if (pNomer == -120)
             {
                 persons[nomerPersa].l1 = new Label();
@@ -61,7 +61,7 @@ namespace WindowsFormsApplication1
                 persons[nomerPersa].l1.Width = 20;
                 persons[nomerPersa].l1.Visible = true;
                 persons[nomerPersa].l1.Text = (nomerPersa + 1).ToString();
-                this.panel1.Controls.Add(persons[nomerPersa].l1);
+                this.leftPanel.Controls.Add(persons[nomerPersa].l1);
 
                 persons[nomerPersa].l2 = new Label();
                 persons[nomerPersa].l2.Top = yPersa;
@@ -69,7 +69,7 @@ namespace WindowsFormsApplication1
                 persons[nomerPersa].l2.Width = 60;
                 persons[nomerPersa].l2.Visible = true;
                 persons[nomerPersa].l2.Text = "Перс" + (nomerPersa + 1).ToString();
-                this.panel1.Controls.Add(persons[nomerPersa].l2);
+                this.leftPanel.Controls.Add(persons[nomerPersa].l2);
 
                 persons[nomerPersa].l3 = new Label();
                 persons[nomerPersa].l3.Top = yPersa;
@@ -77,7 +77,7 @@ namespace WindowsFormsApplication1
                 persons[nomerPersa].l3.Width = 40;
                 persons[nomerPersa].l3.Visible = true;
                 persons[nomerPersa].l3.Text = "saved";
-                this.panel1.Controls.Add(persons[nomerPersa].l3);
+                this.leftPanel.Controls.Add(persons[nomerPersa].l3);
 
                 persons[nomerPersa].b1 = new Button();
                 persons[nomerPersa].b1.Top = yPersa;
@@ -86,8 +86,8 @@ namespace WindowsFormsApplication1
                 persons[nomerPersa].b1.Visible = true;
                 persons[nomerPersa].b1.Text = "Edit";
                 persons[nomerPersa].b1.MouseClick +=
-                    new MouseEventHandler(this.button1_Click_2);
-                this.panel1.Controls.Add(persons[nomerPersa].b1);
+                    new MouseEventHandler(this.Char_Creator_Button_Click);
+                this.leftPanel.Controls.Add(persons[nomerPersa].b1);
 
                 ToolTip tView = new ToolTip();
                 tView.IsBalloon = true;
@@ -103,8 +103,8 @@ namespace WindowsFormsApplication1
                 persons[nomerPersa].b2.Visible = true;
                 persons[nomerPersa].b2.Text = "Del";
                 persons[nomerPersa].b2.Click +=
-                    new System.EventHandler(this.label13_Click);
-                this.panel1.Controls.Add(persons[nomerPersa].b2);
+                    new System.EventHandler(this.Char_Info_Click);
+                this.leftPanel.Controls.Add(persons[nomerPersa].b2);
 
                 ToolTip tDelete = new ToolTip();
                 tDelete.IsBalloon = true;
@@ -332,7 +332,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void button1_Click_2(object sender, MouseEventArgs e)
+        private void Char_Creator_Button_Click(object sender, MouseEventArgs e)
         {
             for (int nomer = 0; nomer < nomerPersa; nomer++)
             {
@@ -360,13 +360,13 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void label13_Click(object sender, EventArgs e)
+        private void Char_Info_Click(object sender, EventArgs e)
         {
-            this.panel1.Controls.Remove(persons[nomerPersa - 1].l1);
-            this.panel1.Controls.Remove(persons[nomerPersa - 1].l2);
-            this.panel1.Controls.Remove(persons[nomerPersa - 1].l3);
-            this.panel1.Controls.Remove(persons[nomerPersa - 1].b1);
-            this.panel1.Controls.Remove(persons[nomerPersa - 1].b2);
+            this.leftPanel.Controls.Remove(persons[nomerPersa - 1].l1);
+            this.leftPanel.Controls.Remove(persons[nomerPersa - 1].l2);
+            this.leftPanel.Controls.Remove(persons[nomerPersa - 1].l3);
+            this.leftPanel.Controls.Remove(persons[nomerPersa - 1].b1);
+            this.leftPanel.Controls.Remove(persons[nomerPersa - 1].b2);
             nomerPersa--;
             yPersa = yPersa - 30;
         }

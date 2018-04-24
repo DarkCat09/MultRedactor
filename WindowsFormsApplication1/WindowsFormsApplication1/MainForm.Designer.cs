@@ -32,16 +32,16 @@ namespace WindowsFormsApplication1
             this.LabelLengh = new System.Windows.Forms.Label();
             this.LabelName = new System.Windows.Forms.Label();
             this.nazvanieTextBox = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.leftPanel = new System.Windows.Forms.Panel();
+            this.Char_Stats = new System.Windows.Forms.Label();
+            this.Char_Info = new System.Windows.Forms.Label();
             this.PictureBoxBackground = new System.Windows.Forms.PictureBox();
             this.LabelBackground = new System.Windows.Forms.Label();
             this.dobavitFonButton = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.rightPanel = new System.Windows.Forms.Panel();
             this.SaveCharButton = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.personPanel = new System.Windows.Forms.Panel();
             this.charNameBox = new System.Windows.Forms.TextBox();
             this.charNameLabel = new System.Windows.Forms.Label();
             this.openSpace = new System.Windows.Forms.PictureBox();
@@ -63,12 +63,12 @@ namespace WindowsFormsApplication1
             this.ButtonAddChar = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.leftPanel.SuspendLayout();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBackground)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.rightPanel.SuspendLayout();
+            this.personPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.openSpace)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,41 +107,41 @@ namespace WindowsFormsApplication1
             this.nazvanieTextBox.Size = new System.Drawing.Size(138, 20);
             this.nazvanieTextBox.TabIndex = 3;
             // 
-            // panel1
+            // leftPanel
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.PictureBoxBackground);
-            this.panel1.Controls.Add(this.LabelBackground);
-            this.panel1.Controls.Add(this.dobavitFonButton);
-            this.panel1.Controls.Add(this.LabelData);
-            this.panel1.Controls.Add(this.nazvanieTextBox);
-            this.panel1.Controls.Add(this.LabelLengh);
-            this.panel1.Controls.Add(this.LabelName);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(297, 380);
-            this.panel1.TabIndex = 4;
+            this.leftPanel.Controls.Add(this.Char_Stats);
+            this.leftPanel.Controls.Add(this.Char_Info);
+            this.leftPanel.Controls.Add(this.PictureBoxBackground);
+            this.leftPanel.Controls.Add(this.LabelBackground);
+            this.leftPanel.Controls.Add(this.dobavitFonButton);
+            this.leftPanel.Controls.Add(this.LabelData);
+            this.leftPanel.Controls.Add(this.nazvanieTextBox);
+            this.leftPanel.Controls.Add(this.LabelLengh);
+            this.leftPanel.Controls.Add(this.LabelName);
+            this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.leftPanel.Location = new System.Drawing.Point(0, 0);
+            this.leftPanel.Name = "leftPanel";
+            this.leftPanel.Size = new System.Drawing.Size(297, 380);
+            this.leftPanel.TabIndex = 4;
             // 
-            // label1
+            // Char_Stats
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 274);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 13);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "number    name         state             view             delete";
+            this.Char_Stats.AutoSize = true;
+            this.Char_Stats.Location = new System.Drawing.Point(14, 274);
+            this.Char_Stats.Name = "Char_Stats";
+            this.Char_Stats.Size = new System.Drawing.Size(259, 13);
+            this.Char_Stats.TabIndex = 24;
+            this.Char_Stats.Text = "number    name         state             view             delete";
             // 
-            // label13
+            // Char_Info
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(44, 232);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(180, 13);
-            this.label13.TabIndex = 23;
-            this.label13.Text = "ИНФОРМАЦИЯ О ПЕРСОНАЖАХ";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            this.Char_Info.AutoSize = true;
+            this.Char_Info.Location = new System.Drawing.Point(44, 232);
+            this.Char_Info.Name = "Char_Info";
+            this.Char_Info.Size = new System.Drawing.Size(180, 13);
+            this.Char_Info.TabIndex = 23;
+            this.Char_Info.Text = "ИНФОРМАЦИЯ О ПЕРСОНАЖАХ";
+            this.Char_Info.Click += new System.EventHandler(this.Char_Info_Click);
             // 
             // PictureBoxBackground
             // 
@@ -179,17 +179,17 @@ namespace WindowsFormsApplication1
             this.splitter1.TabIndex = 5;
             this.splitter1.TabStop = false;
             // 
-            // panel2
+            // rightPanel
             // 
-            this.panel2.Controls.Add(this.SaveCharButton);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.SaveMultButton);
-            this.panel2.Controls.Add(this.ButtonAddChar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(300, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(377, 380);
-            this.panel2.TabIndex = 6;
+            this.rightPanel.Controls.Add(this.SaveCharButton);
+            this.rightPanel.Controls.Add(this.personPanel);
+            this.rightPanel.Controls.Add(this.SaveMultButton);
+            this.rightPanel.Controls.Add(this.ButtonAddChar);
+            this.rightPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rightPanel.Location = new System.Drawing.Point(300, 0);
+            this.rightPanel.Name = "rightPanel";
+            this.rightPanel.Size = new System.Drawing.Size(377, 380);
+            this.rightPanel.TabIndex = 6;
             // 
             // SaveCharButton
             // 
@@ -202,33 +202,31 @@ namespace WindowsFormsApplication1
             this.SaveCharButton.UseVisualStyleBackColor = true;
             this.SaveCharButton.Click += new System.EventHandler(this.SaveCharButtonClick);
             // 
-            // panel3
+            // personPanel
             // 
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.charNameBox);
-            this.panel3.Controls.Add(this.charNameLabel);
-            this.panel3.Controls.Add(this.openSpace);
-            this.panel3.Controls.Add(this.SpriteNumberLabel);
-            this.panel3.Controls.Add(this.SpriteNumberTextBox);
-            this.panel3.Controls.Add(this.OpenButton);
-            this.panel3.Controls.Add(this.LabelPic);
-            this.panel3.Controls.Add(this.LabelTime);
-            this.panel3.Controls.Add(this.LabelDef2);
-            this.panel3.Controls.Add(this.LabelDef1);
-            this.panel3.Controls.Add(this.LabelWalls);
-            this.panel3.Controls.Add(this.TextBoxTime1);
-            this.panel3.Controls.Add(this.TextBoxTime2);
-            this.panel3.Controls.Add(this.TextBoxWall2);
-            this.panel3.Controls.Add(this.TextBoxWall1);
-            this.panel3.Controls.Add(this.ComboBoxMove);
-            this.panel3.Controls.Add(this.LabelMoveType);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 26);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(377, 324);
-            this.panel3.TabIndex = 2;
-            this.panel3.Visible = false;
+            this.personPanel.Controls.Add(this.charNameBox);
+            this.personPanel.Controls.Add(this.charNameLabel);
+            this.personPanel.Controls.Add(this.openSpace);
+            this.personPanel.Controls.Add(this.SpriteNumberLabel);
+            this.personPanel.Controls.Add(this.SpriteNumberTextBox);
+            this.personPanel.Controls.Add(this.OpenButton);
+            this.personPanel.Controls.Add(this.LabelPic);
+            this.personPanel.Controls.Add(this.LabelTime);
+            this.personPanel.Controls.Add(this.LabelDef2);
+            this.personPanel.Controls.Add(this.LabelDef1);
+            this.personPanel.Controls.Add(this.LabelWalls);
+            this.personPanel.Controls.Add(this.TextBoxTime1);
+            this.personPanel.Controls.Add(this.TextBoxTime2);
+            this.personPanel.Controls.Add(this.TextBoxWall2);
+            this.personPanel.Controls.Add(this.TextBoxWall1);
+            this.personPanel.Controls.Add(this.ComboBoxMove);
+            this.personPanel.Controls.Add(this.LabelMoveType);
+            this.personPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.personPanel.Location = new System.Drawing.Point(0, 26);
+            this.personPanel.Name = "personPanel";
+            this.personPanel.Size = new System.Drawing.Size(377, 324);
+            this.personPanel.TabIndex = 2;
+            this.personPanel.Visible = false;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // charNameBox
@@ -432,19 +430,19 @@ namespace WindowsFormsApplication1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 380);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.rightPanel);
             this.Controls.Add(this.splitter1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.leftPanel);
             this.Name = "MainForm";
             this.RightToLeftLayout = true;
             this.Text = "Свойства персонажа";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.leftPanel.ResumeLayout(false);
+            this.leftPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBackground)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.rightPanel.ResumeLayout(false);
+            this.personPanel.ResumeLayout(false);
+            this.personPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.openSpace)).EndInit();
             this.ResumeLayout(false);
 
@@ -456,12 +454,12 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.Label LabelLengh;
         private System.Windows.Forms.Label LabelName;
         private System.Windows.Forms.TextBox nazvanieTextBox;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel leftPanel;
         private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel rightPanel;
         private System.Windows.Forms.Button SaveMultButton;
         private System.Windows.Forms.Button ButtonAddChar;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel personPanel;
         private System.Windows.Forms.Label LabelMoveType;
         private System.Windows.Forms.TextBox TextBoxTime1;
         private System.Windows.Forms.TextBox TextBoxTime2;
@@ -482,9 +480,9 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.Label LabelBackground;
         private System.Windows.Forms.Button dobavitFonButton;
         private System.Windows.Forms.PictureBox PictureBoxBackground;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label Char_Info;
         private System.Windows.Forms.PictureBox openSpace;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Char_Stats;
         private System.Windows.Forms.TextBox charNameBox;
         private System.Windows.Forms.Label charNameLabel;
         private System.Windows.Forms.TextBox textBox1;
