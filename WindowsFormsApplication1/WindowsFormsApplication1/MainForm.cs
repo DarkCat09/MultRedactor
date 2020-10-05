@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Text;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -23,9 +19,9 @@ namespace WindowsFormsApplication1
         public MainForm()
         {
             InitializeComponent();
-
-            openFileDialog1.Filter = "Kartinki|*.bmp";
-            saveFileDialog1.Filter = "cpp files|*.cpp";
+            ComboBoxMove.SelectedIndex = 0;
+            openFileDialog1.Filter = "Bitmap Pictures|*.bmp";
+            saveFileDialog1.Filter = "C++ Code Files|*.cpp";
         }
 
         private void buttonAddCharClick(object sender, EventArgs e)
@@ -48,70 +44,14 @@ namespace WindowsFormsApplication1
         {
             if (personPanel.Visible == false)
             {
-                MessageBox.Show("Где параметры? Покажи мне, ткни мне в них!");
+                MessageBox.Show("Где параметры? Покажи мне, ткни меня в них!");
                 return;
             }
 
             personPanel.Visible = true;
             if (pNomer == -120)
             {
-                persons[nomerPersa].l1 = new Label();
-                persons[nomerPersa].l1.Top = yPersa;
-                persons[nomerPersa].l1.Left = 30;
-                persons[nomerPersa].l1.Width = 20;
-                persons[nomerPersa].l1.Visible = true;
-                persons[nomerPersa].l1.Text = (nomerPersa + 1).ToString();
-                this.leftPanel.Controls.Add(persons[nomerPersa].l1);
-
-                persons[nomerPersa].l2 = new Label();
-                persons[nomerPersa].l2.Top = yPersa;
-                persons[nomerPersa].l2.Left = 60;
-                persons[nomerPersa].l2.Width = 60;
-                persons[nomerPersa].l2.Visible = true;
-                persons[nomerPersa].l2.Text = "Перс" + (nomerPersa + 1).ToString();
-                this.leftPanel.Controls.Add(persons[nomerPersa].l2);
-
-                persons[nomerPersa].l3 = new Label();
-                persons[nomerPersa].l3.Top = yPersa;
-                persons[nomerPersa].l3.Left = 120;
-                persons[nomerPersa].l3.Width = 40;
-                persons[nomerPersa].l3.Visible = true;
-                persons[nomerPersa].l3.Text = "saved";
-                this.leftPanel.Controls.Add(persons[nomerPersa].l3);
-
-                persons[nomerPersa].b1 = new Button();
-                persons[nomerPersa].b1.Top = yPersa;
-                persons[nomerPersa].b1.Left = 170;
-                persons[nomerPersa].b1.Width = 50;
-                persons[nomerPersa].b1.Visible = true;
-                persons[nomerPersa].b1.Text = "Edit";
-                persons[nomerPersa].b1.MouseClick +=
-                    new MouseEventHandler(this.Char_Creator_Button_Click);
-                this.leftPanel.Controls.Add(persons[nomerPersa].b1);
-
-                ToolTip tView = new ToolTip();
-                tView.IsBalloon = true;
-                tView.InitialDelay = 0;
-                tView.ShowAlways = true;
-                tView.AutoPopDelay = 2000;
-                tView.SetToolTip(persons[nomerPersa].b1, "View/edit person");
-
-                persons[nomerPersa].b2 = new Button();
-                persons[nomerPersa].b2.Top = yPersa;
-                persons[nomerPersa].b2.Left = 230;
-                persons[nomerPersa].b2.Width = 50;
-                persons[nomerPersa].b2.Visible = true;
-                persons[nomerPersa].b2.Text = "Del";
-                persons[nomerPersa].b2.Click +=
-                    new System.EventHandler(this.Char_Info_Click);
-                this.leftPanel.Controls.Add(persons[nomerPersa].b2);
-
-                ToolTip tDelete = new ToolTip();
-                tDelete.IsBalloon = true;
-                tDelete.InitialDelay = 0;
-                tDelete.ShowAlways = true;
-                tDelete.AutoPopDelay = 2000;
-                tDelete.SetToolTip(persons[nomerPersa].b2, "Delete this person");
+                persons[nomerPersa] = AddRowToPersList(persons[nomerPersa]);
 
                 persons[nomerPersa].coord = TextBoxWall1.Text;
                 persons[nomerPersa].coord2 = TextBoxWall2.Text;
@@ -139,7 +79,7 @@ namespace WindowsFormsApplication1
                 }
 
                 nomerPersa++;
-                yPersa = yPersa + 30;
+                yPersa += 30;
                 openSpace.Image = null;
             }
             else
@@ -181,6 +121,69 @@ namespace WindowsFormsApplication1
             LabelLengh.Text = "Длительность: " + maxTime.ToString() + " секунд";
         }
 
+        private Person AddRowToPersList(Person p)
+        {
+            p.l1 = new Label();
+            p.l1.Top = yPersa;
+            p.l1.Left = 30;
+            p.l1.Width = 20;
+            p.l1.Visible = true;
+            p.l1.Text = (nomerPersa + 1).ToString();
+            leftPanel.Controls.Add(p.l1);
+
+            p.l2 = new Label();
+            p.l2.Top = yPersa;
+            p.l2.Left = 60;
+            p.l2.Width = 60;
+            p.l2.Visible = true;
+            p.l2.Text = "Перс" + (nomerPersa + 1).ToString();
+            leftPanel.Controls.Add(p.l2);
+
+            p.l3 = new Label();
+            p.l3.Top = yPersa;
+            p.l3.Left = 120;
+            p.l3.Width = 40;
+            p.l3.Visible = true;
+            p.l3.Text = "saved";
+            leftPanel.Controls.Add(p.l3);
+
+            p.b1 = new Button();
+            p.b1.Top = yPersa;
+            p.b1.Left = 170;
+            p.b1.Width = 50;
+            p.b1.Visible = true;
+            p.b1.Text = "Edit";
+            p.b1.MouseClick +=
+                new MouseEventHandler(this.Char_Creator_Button_Click);
+            leftPanel.Controls.Add(p.b1);
+
+            ToolTip tView = new ToolTip();
+            tView.IsBalloon = true;
+            tView.InitialDelay = 0;
+            tView.ShowAlways = true;
+            tView.AutoPopDelay = 2000;
+            tView.SetToolTip(p.b1, "View/edit person");
+
+            p.b2 = new Button();
+            p.b2.Top = yPersa;
+            p.b2.Left = 230;
+            p.b2.Width = 50;
+            p.b2.Visible = true;
+            p.b2.Text = "Del";
+            p.b2.Click +=
+                new System.EventHandler(this.Char_Info_Click);
+            leftPanel.Controls.Add(p.b2);
+
+            ToolTip tDelete = new ToolTip();
+            tDelete.IsBalloon = true;
+            tDelete.InitialDelay = 0;
+            tDelete.ShowAlways = true;
+            tDelete.AutoPopDelay = 2000;
+            tDelete.SetToolTip(p.b2, "Delete this person");
+
+            return p;
+        }
+
         private void OpenAddCharClick(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
@@ -212,7 +215,7 @@ namespace WindowsFormsApplication1
         {
             if (PictureBoxBackground.Image == null)
             {
-                MessageBox.Show("Что ты собрался выводить то, поехавший (фон)?");
+                MessageBox.Show("Что ты собрался выводить-то, поехавший (фон)?");
                 return;
             }
 
@@ -259,17 +262,17 @@ namespace WindowsFormsApplication1
             {
                 string filename = saveFileDialog1.FileName;
 
-                //Add TXLib and pics
-                File.Copy(Path.Combine(Application.StartupPath, "TXLib.h"), filename.Replace(Path.GetFileName(filename), "TXLib.h"), true);
-                string adres_papki = filename.Replace(Path.GetFileName(filename), "Pictures");
-                if (!Directory.Exists(adres_papki))
+                //Adding TXLibrary and pictures
+                File.Copy("TXLib.h", Path.GetDirectoryName(filename) + "\\TXLib.h", true);
+                string dir_path = Path.GetDirectoryName(filename) + "\\Pictures";
+                if (!Directory.Exists(dir_path))
                 {
-                    Directory.CreateDirectory(adres_papki);
+                    Directory.CreateDirectory(dir_path);
                 }
 
-                if (adressBackground != adres_papki + "\\" + Path.GetFileName(adressBackground))
+                if (adressBackground != dir_path + "\\" + Path.GetFileName(adressBackground))
                 {
-                    File.Copy(adressBackground, adres_papki + "\\" + Path.GetFileName(adressBackground), true);
+                    File.Copy(adressBackground, dir_path + "\\" + Path.GetFileName(adressBackground), true);
                 }
  
                 Files.CreateStruct(filename);
@@ -277,11 +280,11 @@ namespace WindowsFormsApplication1
  
                 for (int nomer = 0; nomer < nomerPersa; nomer++)
                 {
-                    File.Copy(persons[nomer].adress, adres_papki + "\\" + Path.GetFileName(persons[nomer].adress), true);
+                    File.Copy(persons[nomer].adress, dir_path + "\\" + Path.GetFileName(persons[nomer].adress), true);
 
-                    if (adres_papki == adres_papki + "\\" + Path.GetFileName(persons[nomer].adress))
+                    if (dir_path == dir_path + "\\" + Path.GetFileName(persons[nomer].adress))
                     {
-                        File.Copy(persons[nomer].adress, adres_papki + "\\" + Path.GetFileName(persons[nomer].adress), true);
+                        File.Copy(persons[nomer].adress, dir_path + "\\" + Path.GetFileName(persons[nomer].adress), true);
                     }
 
                     if (persons[nomer].moveside == "Прямо")
@@ -368,7 +371,7 @@ namespace WindowsFormsApplication1
             this.leftPanel.Controls.Remove(persons[nomerPersa - 1].b1);
             this.leftPanel.Controls.Remove(persons[nomerPersa - 1].b2);
             nomerPersa--;
-            yPersa = yPersa - 30;
+            yPersa -= 30;
         }
 
         private void TextBoxWall1_KeyPress(object sender, KeyPressEventArgs e)

@@ -48,7 +48,6 @@ namespace WindowsFormsApplication1
             this.charNameLabel = new System.Windows.Forms.Label();
             this.openSpace = new System.Windows.Forms.PictureBox();
             this.SpriteNumberLabel = new System.Windows.Forms.Label();
-            this.SpriteNumberTextBox = new System.Windows.Forms.TextBox();
             this.OpenButton = new System.Windows.Forms.Button();
             this.LabelPic = new System.Windows.Forms.Label();
             this.LabelTime = new System.Windows.Forms.Label();
@@ -65,50 +64,48 @@ namespace WindowsFormsApplication1
             this.ButtonAddChar = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.SpriteNumberTextBox = new System.Windows.Forms.NumericUpDown();
             this.leftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBackground)).BeginInit();
             this.rightPanel.SuspendLayout();
             this.personPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.openSpace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpriteNumberTextBox)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelData
             // 
             this.LabelData.AutoSize = true;
             this.LabelData.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelData.Location = new System.Drawing.Point(0, 11);
-            this.LabelData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelData.Location = new System.Drawing.Point(3, 3);
             this.LabelData.Name = "LabelData";
-            this.LabelData.Size = new System.Drawing.Size(290, 28);
+            this.LabelData.Size = new System.Drawing.Size(234, 23);
             this.LabelData.TabIndex = 0;
             this.LabelData.Text = "Данные о мультфильме:";
             // 
             // LabelLengh
             // 
             this.LabelLengh.AutoSize = true;
-            this.LabelLengh.Location = new System.Drawing.Point(19, 74);
-            this.LabelLengh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelLengh.Location = new System.Drawing.Point(4, 32);
             this.LabelLengh.Name = "LabelLengh";
-            this.LabelLengh.Size = new System.Drawing.Size(167, 17);
+            this.LabelLengh.Size = new System.Drawing.Size(130, 13);
             this.LabelLengh.TabIndex = 1;
             this.LabelLengh.Text = "Длительность: 0 секунд";
             // 
             // LabelName
             // 
             this.LabelName.AutoSize = true;
-            this.LabelName.Location = new System.Drawing.Point(19, 106);
-            this.LabelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelName.Location = new System.Drawing.Point(4, 58);
             this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(76, 17);
+            this.LabelName.Size = new System.Drawing.Size(60, 13);
             this.LabelName.TabIndex = 2;
             this.LabelName.Text = "Название:";
             // 
             // nazvanieTextBox
             // 
-            this.nazvanieTextBox.Location = new System.Drawing.Point(107, 106);
-            this.nazvanieTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nazvanieTextBox.Location = new System.Drawing.Point(86, 55);
             this.nazvanieTextBox.Name = "nazvanieTextBox";
-            this.nazvanieTextBox.Size = new System.Drawing.Size(183, 22);
+            this.nazvanieTextBox.Size = new System.Drawing.Size(138, 20);
             this.nazvanieTextBox.TabIndex = 3;
             // 
             // leftPanel
@@ -124,38 +121,34 @@ namespace WindowsFormsApplication1
             this.leftPanel.Controls.Add(this.LabelName);
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftPanel.Location = new System.Drawing.Point(0, 0);
-            this.leftPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(396, 468);
+            this.leftPanel.Size = new System.Drawing.Size(297, 380);
             this.leftPanel.TabIndex = 4;
             // 
             // Char_Stats
             // 
             this.Char_Stats.AutoSize = true;
-            this.Char_Stats.Location = new System.Drawing.Point(19, 337);
-            this.Char_Stats.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Char_Stats.Location = new System.Drawing.Point(12, 219);
             this.Char_Stats.Name = "Char_Stats";
-            this.Char_Stats.Size = new System.Drawing.Size(344, 17);
+            this.Char_Stats.Size = new System.Drawing.Size(259, 13);
             this.Char_Stats.TabIndex = 24;
             this.Char_Stats.Text = "number    name         state             view             delete";
             // 
             // Char_Info
             // 
             this.Char_Info.AutoSize = true;
-            this.Char_Info.Location = new System.Drawing.Point(59, 286);
-            this.Char_Info.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Char_Info.Location = new System.Drawing.Point(48, 200);
             this.Char_Info.Name = "Char_Info";
-            this.Char_Info.Size = new System.Drawing.Size(229, 17);
+            this.Char_Info.Size = new System.Drawing.Size(180, 13);
             this.Char_Info.TabIndex = 23;
             this.Char_Info.Text = "ИНФОРМАЦИЯ О ПЕРСОНАЖАХ";
             this.Char_Info.Click += new System.EventHandler(this.Char_Info_Click);
             // 
             // PictureBoxBackground
             // 
-            this.PictureBoxBackground.Location = new System.Drawing.Point(21, 194);
-            this.PictureBoxBackground.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PictureBoxBackground.Location = new System.Drawing.Point(84, 111);
             this.PictureBoxBackground.Name = "PictureBoxBackground";
-            this.PictureBoxBackground.Size = new System.Drawing.Size(156, 89);
+            this.PictureBoxBackground.Size = new System.Drawing.Size(117, 72);
             this.PictureBoxBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PictureBoxBackground.TabIndex = 12;
             this.PictureBoxBackground.TabStop = false;
@@ -163,19 +156,17 @@ namespace WindowsFormsApplication1
             // LabelBackground
             // 
             this.LabelBackground.AutoSize = true;
-            this.LabelBackground.Location = new System.Drawing.Point(19, 140);
-            this.LabelBackground.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelBackground.Location = new System.Drawing.Point(4, 87);
             this.LabelBackground.Name = "LabelBackground";
-            this.LabelBackground.Size = new System.Drawing.Size(100, 17);
+            this.LabelBackground.Size = new System.Drawing.Size(77, 13);
             this.LabelBackground.TabIndex = 11;
             this.LabelBackground.Text = "Выбрать фон:";
             // 
             // dobavitFonButton
             // 
-            this.dobavitFonButton.Location = new System.Drawing.Point(23, 160);
-            this.dobavitFonButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dobavitFonButton.Location = new System.Drawing.Point(85, 81);
             this.dobavitFonButton.Name = "dobavitFonButton";
-            this.dobavitFonButton.Size = new System.Drawing.Size(155, 30);
+            this.dobavitFonButton.Size = new System.Drawing.Size(116, 24);
             this.dobavitFonButton.TabIndex = 10;
             this.dobavitFonButton.Text = "Добавить";
             this.dobavitFonButton.UseVisualStyleBackColor = true;
@@ -183,10 +174,9 @@ namespace WindowsFormsApplication1
             // 
             // splitter1
             // 
-            this.splitter1.Location = new System.Drawing.Point(396, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitter1.Location = new System.Drawing.Point(297, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(4, 468);
+            this.splitter1.Size = new System.Drawing.Size(3, 380);
             this.splitter1.TabIndex = 5;
             this.splitter1.TabStop = false;
             // 
@@ -197,19 +187,17 @@ namespace WindowsFormsApplication1
             this.rightPanel.Controls.Add(this.SaveMultButton);
             this.rightPanel.Controls.Add(this.ButtonAddChar);
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rightPanel.Location = new System.Drawing.Point(400, 0);
-            this.rightPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rightPanel.Location = new System.Drawing.Point(300, 0);
             this.rightPanel.Name = "rightPanel";
-            this.rightPanel.Size = new System.Drawing.Size(503, 468);
+            this.rightPanel.Size = new System.Drawing.Size(377, 380);
             this.rightPanel.TabIndex = 6;
             // 
             // SaveCharButton
             // 
             this.SaveCharButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.SaveCharButton.Location = new System.Drawing.Point(0, 394);
-            this.SaveCharButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SaveCharButton.Location = new System.Drawing.Point(0, 320);
             this.SaveCharButton.Name = "SaveCharButton";
-            this.SaveCharButton.Size = new System.Drawing.Size(503, 37);
+            this.SaveCharButton.Size = new System.Drawing.Size(377, 30);
             this.SaveCharButton.TabIndex = 3;
             this.SaveCharButton.Text = "Сохранить персонажа";
             this.SaveCharButton.UseVisualStyleBackColor = true;
@@ -217,13 +205,13 @@ namespace WindowsFormsApplication1
             // 
             // personPanel
             // 
+            this.personPanel.Controls.Add(this.SpriteNumberTextBox);
             this.personPanel.Controls.Add(this.charNameBox);
             this.personPanel.Controls.Add(this.circlesTextBox);
             this.personPanel.Controls.Add(this.circlesLabel);
             this.personPanel.Controls.Add(this.charNameLabel);
             this.personPanel.Controls.Add(this.openSpace);
             this.personPanel.Controls.Add(this.SpriteNumberLabel);
-            this.personPanel.Controls.Add(this.SpriteNumberTextBox);
             this.personPanel.Controls.Add(this.OpenButton);
             this.personPanel.Controls.Add(this.LabelPic);
             this.personPanel.Controls.Add(this.LabelTime);
@@ -237,55 +225,49 @@ namespace WindowsFormsApplication1
             this.personPanel.Controls.Add(this.ComboBoxMove);
             this.personPanel.Controls.Add(this.LabelMoveType);
             this.personPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.personPanel.Location = new System.Drawing.Point(0, 32);
-            this.personPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.personPanel.Location = new System.Drawing.Point(0, 26);
             this.personPanel.Name = "personPanel";
-            this.personPanel.Size = new System.Drawing.Size(503, 399);
+            this.personPanel.Size = new System.Drawing.Size(377, 324);
             this.personPanel.TabIndex = 2;
             this.personPanel.Visible = false;
             // 
             // charNameBox
             // 
-            this.charNameBox.Location = new System.Drawing.Point(113, 108);
-            this.charNameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.charNameBox.Location = new System.Drawing.Point(115, 84);
             this.charNameBox.Name = "charNameBox";
-            this.charNameBox.Size = new System.Drawing.Size(183, 22);
+            this.charNameBox.Size = new System.Drawing.Size(138, 20);
             this.charNameBox.TabIndex = 19;
             // 
             // circlesTextBox
             // 
-            this.circlesTextBox.Location = new System.Drawing.Point(113, 140);
-            this.circlesTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.circlesTextBox.Location = new System.Drawing.Point(115, 110);
             this.circlesTextBox.Name = "circlesTextBox";
-            this.circlesTextBox.Size = new System.Drawing.Size(183, 22);
+            this.circlesTextBox.Size = new System.Drawing.Size(138, 20);
             this.circlesTextBox.TabIndex = 21;
             // 
             // circlesLabel
             // 
             this.circlesLabel.AutoSize = true;
-            this.circlesLabel.Location = new System.Drawing.Point(5, 140);
-            this.circlesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.circlesLabel.Location = new System.Drawing.Point(3, 113);
             this.circlesLabel.Name = "circlesLabel";
-            this.circlesLabel.Size = new System.Drawing.Size(103, 17);
+            this.circlesLabel.Size = new System.Drawing.Size(81, 13);
             this.circlesLabel.TabIndex = 20;
             this.circlesLabel.Text = "Кол-во кругов:";
             // 
             // charNameLabel
             // 
             this.charNameLabel.AutoSize = true;
-            this.charNameLabel.Location = new System.Drawing.Point(25, 108);
-            this.charNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.charNameLabel.Location = new System.Drawing.Point(3, 87);
             this.charNameLabel.Name = "charNameLabel";
-            this.charNameLabel.Size = new System.Drawing.Size(76, 17);
+            this.charNameLabel.Size = new System.Drawing.Size(60, 13);
             this.charNameLabel.TabIndex = 18;
             this.charNameLabel.Text = "Название:";
             // 
             // openSpace
             // 
-            this.openSpace.Location = new System.Drawing.Point(247, 238);
-            this.openSpace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.openSpace.Location = new System.Drawing.Point(72, 203);
             this.openSpace.Name = "openSpace";
-            this.openSpace.Size = new System.Drawing.Size(248, 89);
+            this.openSpace.Size = new System.Drawing.Size(186, 72);
             this.openSpace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.openSpace.TabIndex = 17;
             this.openSpace.TabStop = false;
@@ -293,27 +275,17 @@ namespace WindowsFormsApplication1
             // SpriteNumberLabel
             // 
             this.SpriteNumberLabel.AutoSize = true;
-            this.SpriteNumberLabel.Location = new System.Drawing.Point(5, 193);
-            this.SpriteNumberLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SpriteNumberLabel.Location = new System.Drawing.Point(3, 139);
             this.SpriteNumberLabel.Name = "SpriteNumberLabel";
-            this.SpriteNumberLabel.Size = new System.Drawing.Size(155, 17);
+            this.SpriteNumberLabel.Size = new System.Drawing.Size(119, 13);
             this.SpriteNumberLabel.TabIndex = 16;
             this.SpriteNumberLabel.Text = "Количество спрайтов:";
             // 
-            // SpriteNumberTextBox
-            // 
-            this.SpriteNumberTextBox.Location = new System.Drawing.Point(9, 213);
-            this.SpriteNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.SpriteNumberTextBox.Name = "SpriteNumberTextBox";
-            this.SpriteNumberTextBox.Size = new System.Drawing.Size(109, 22);
-            this.SpriteNumberTextBox.TabIndex = 15;
-            // 
             // OpenButton
             // 
-            this.OpenButton.Location = new System.Drawing.Point(247, 193);
-            this.OpenButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OpenButton.Location = new System.Drawing.Point(72, 167);
             this.OpenButton.Name = "OpenButton";
-            this.OpenButton.Size = new System.Drawing.Size(256, 37);
+            this.OpenButton.Size = new System.Drawing.Size(192, 30);
             this.OpenButton.TabIndex = 14;
             this.OpenButton.Text = "Открыть персонажа";
             this.OpenButton.UseVisualStyleBackColor = true;
@@ -322,120 +294,108 @@ namespace WindowsFormsApplication1
             // LabelPic
             // 
             this.LabelPic.AutoSize = true;
-            this.LabelPic.Location = new System.Drawing.Point(168, 193);
-            this.LabelPic.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelPic.Location = new System.Drawing.Point(3, 174);
             this.LabelPic.Name = "LabelPic";
-            this.LabelPic.Size = new System.Drawing.Size(75, 17);
+            this.LabelPic.Size = new System.Drawing.Size(58, 13);
             this.LabelPic.TabIndex = 12;
             this.LabelPic.Text = "Картинка:";
             // 
             // LabelTime
             // 
             this.LabelTime.AutoSize = true;
-            this.LabelTime.Location = new System.Drawing.Point(25, 79);
-            this.LabelTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelTime.Location = new System.Drawing.Point(3, 61);
             this.LabelTime.Name = "LabelTime";
-            this.LabelTime.Size = new System.Drawing.Size(67, 17);
+            this.LabelTime.Size = new System.Drawing.Size(54, 13);
             this.LabelTime.TabIndex = 11;
             this.LabelTime.Text = "Тайминг:";
             // 
             // LabelDef2
             // 
             this.LabelDef2.AutoSize = true;
-            this.LabelDef2.Location = new System.Drawing.Point(320, 79);
-            this.LabelDef2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelDef2.Location = new System.Drawing.Point(223, 61);
             this.LabelDef2.Name = "LabelDef2";
-            this.LabelDef2.Size = new System.Drawing.Size(18, 17);
+            this.LabelDef2.Size = new System.Drawing.Size(13, 13);
             this.LabelDef2.TabIndex = 10;
             this.LabelDef2.Text = "--";
             // 
             // LabelDef1
             // 
             this.LabelDef1.AutoSize = true;
-            this.LabelDef1.Location = new System.Drawing.Point(320, 43);
-            this.LabelDef1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelDef1.Location = new System.Drawing.Point(223, 36);
             this.LabelDef1.Name = "LabelDef1";
-            this.LabelDef1.Size = new System.Drawing.Size(18, 17);
+            this.LabelDef1.Size = new System.Drawing.Size(13, 13);
             this.LabelDef1.TabIndex = 9;
             this.LabelDef1.Text = "--";
             // 
             // LabelWalls
             // 
             this.LabelWalls.AutoSize = true;
-            this.LabelWalls.Location = new System.Drawing.Point(25, 43);
-            this.LabelWalls.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelWalls.Location = new System.Drawing.Point(3, 36);
             this.LabelWalls.Name = "LabelWalls";
-            this.LabelWalls.Size = new System.Drawing.Size(138, 17);
+            this.LabelWalls.Size = new System.Drawing.Size(107, 13);
             this.LabelWalls.TabIndex = 8;
             this.LabelWalls.Text = "Границы движения:";
             // 
             // TextBoxTime1
             // 
-            this.TextBoxTime1.Location = new System.Drawing.Point(176, 75);
-            this.TextBoxTime1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBoxTime1.Location = new System.Drawing.Point(116, 59);
             this.TextBoxTime1.Name = "TextBoxTime1";
-            this.TextBoxTime1.Size = new System.Drawing.Size(132, 22);
+            this.TextBoxTime1.Size = new System.Drawing.Size(100, 20);
             this.TextBoxTime1.TabIndex = 5;
             // 
             // TextBoxTime2
             // 
-            this.TextBoxTime2.Location = new System.Drawing.Point(345, 75);
-            this.TextBoxTime2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBoxTime2.Location = new System.Drawing.Point(243, 59);
             this.TextBoxTime2.Name = "TextBoxTime2";
-            this.TextBoxTime2.Size = new System.Drawing.Size(132, 22);
+            this.TextBoxTime2.Size = new System.Drawing.Size(100, 20);
             this.TextBoxTime2.TabIndex = 4;
             // 
             // TextBoxWall2
             // 
-            this.TextBoxWall2.Location = new System.Drawing.Point(345, 39);
-            this.TextBoxWall2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBoxWall2.Location = new System.Drawing.Point(243, 33);
             this.TextBoxWall2.Name = "TextBoxWall2";
-            this.TextBoxWall2.Size = new System.Drawing.Size(132, 22);
+            this.TextBoxWall2.Size = new System.Drawing.Size(100, 20);
             this.TextBoxWall2.TabIndex = 3;
             this.TextBoxWall2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxWall1_KeyPress);
             // 
             // TextBoxWall1
             // 
-            this.TextBoxWall1.Location = new System.Drawing.Point(176, 39);
-            this.TextBoxWall1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBoxWall1.Location = new System.Drawing.Point(116, 33);
             this.TextBoxWall1.Name = "TextBoxWall1";
-            this.TextBoxWall1.Size = new System.Drawing.Size(132, 22);
+            this.TextBoxWall1.Size = new System.Drawing.Size(100, 20);
             this.TextBoxWall1.TabIndex = 2;
             this.TextBoxWall1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxWall1_KeyPress);
             // 
             // ComboBoxMove
             // 
+            this.ComboBoxMove.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBoxMove.FormattingEnabled = true;
             this.ComboBoxMove.Items.AddRange(new object[] {
             "Прямо",
             "Диагонально",
             "Волнами",
             "Кругами"});
-            this.ComboBoxMove.Location = new System.Drawing.Point(148, 4);
-            this.ComboBoxMove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComboBoxMove.Location = new System.Drawing.Point(115, 3);
             this.ComboBoxMove.Name = "ComboBoxMove";
-            this.ComboBoxMove.Size = new System.Drawing.Size(160, 24);
+            this.ComboBoxMove.Size = new System.Drawing.Size(121, 21);
             this.ComboBoxMove.TabIndex = 1;
-            this.ComboBoxMove.Text = "Прямо";
             this.ComboBoxMove.SelectedIndexChanged += new System.EventHandler(this.ComboBoxMove_SelectedIndexChanged);
             // 
             // LabelMoveType
             // 
             this.LabelMoveType.AutoSize = true;
-            this.LabelMoveType.Location = new System.Drawing.Point(31, 4);
-            this.LabelMoveType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelMoveType.Location = new System.Drawing.Point(3, 6);
             this.LabelMoveType.Name = "LabelMoveType";
-            this.LabelMoveType.Size = new System.Drawing.Size(105, 17);
+            this.LabelMoveType.Size = new System.Drawing.Size(82, 13);
             this.LabelMoveType.TabIndex = 0;
             this.LabelMoveType.Text = "Вид движения:";
             // 
             // SaveMultButton
             // 
             this.SaveMultButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.SaveMultButton.Location = new System.Drawing.Point(0, 431);
-            this.SaveMultButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SaveMultButton.Location = new System.Drawing.Point(0, 350);
             this.SaveMultButton.Name = "SaveMultButton";
-            this.SaveMultButton.Size = new System.Drawing.Size(503, 37);
+            this.SaveMultButton.Size = new System.Drawing.Size(377, 30);
             this.SaveMultButton.TabIndex = 1;
             this.SaveMultButton.Text = "Сохранить мульт";
             this.SaveMultButton.UseVisualStyleBackColor = true;
@@ -445,9 +405,8 @@ namespace WindowsFormsApplication1
             // 
             this.ButtonAddChar.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonAddChar.Location = new System.Drawing.Point(0, 0);
-            this.ButtonAddChar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ButtonAddChar.Name = "ButtonAddChar";
-            this.ButtonAddChar.Size = new System.Drawing.Size(503, 32);
+            this.ButtonAddChar.Size = new System.Drawing.Size(377, 26);
             this.ButtonAddChar.TabIndex = 0;
             this.ButtonAddChar.Text = "Добавить персонажа";
             this.ButtonAddChar.UseVisualStyleBackColor = true;
@@ -457,15 +416,21 @@ namespace WindowsFormsApplication1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // SpriteNumberTextBox
+            // 
+            this.SpriteNumberTextBox.Location = new System.Drawing.Point(128, 136);
+            this.SpriteNumberTextBox.Name = "SpriteNumberTextBox";
+            this.SpriteNumberTextBox.Size = new System.Drawing.Size(43, 20);
+            this.SpriteNumberTextBox.TabIndex = 22;
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 468);
+            this.ClientSize = new System.Drawing.Size(677, 380);
             this.Controls.Add(this.rightPanel);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.leftPanel);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.RightToLeftLayout = true;
             this.Text = "Свойства персонажа";
@@ -477,6 +442,7 @@ namespace WindowsFormsApplication1
             this.personPanel.ResumeLayout(false);
             this.personPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.openSpace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpriteNumberTextBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -509,7 +475,6 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.Button OpenButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label SpriteNumberLabel;
-        private System.Windows.Forms.TextBox SpriteNumberTextBox;
         private System.Windows.Forms.Label LabelBackground;
         private System.Windows.Forms.Button dobavitFonButton;
         private System.Windows.Forms.PictureBox PictureBoxBackground;
@@ -520,5 +485,6 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.Label charNameLabel;
         private System.Windows.Forms.TextBox circlesTextBox;
         private System.Windows.Forms.Label circlesLabel;
+        private System.Windows.Forms.NumericUpDown SpriteNumberTextBox;
     }
 }
