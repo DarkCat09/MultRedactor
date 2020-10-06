@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Circle.cs" />
+    <Compile Include="CompileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompileForm.Designer.cs">
+      <DependentUpon>CompileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Files.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="MainForm.cs">
@@ -61,6 +67,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sinus.cs" />
+    <EmbeddedResource Include="CompileForm.resx">
+      <DependentUpon>CompileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

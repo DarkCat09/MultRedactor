@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -18,12 +14,12 @@ namespace WindowsFormsApplication1
         public int nomer;
         public String coord;
         public String coord2;
-        //Dobavit polya
+        // TODO: Add fields
         public String x1;
         public String y1;
         public String x2;
         public String y2;
-        public String adress;
+        public String address;
         public String time1;
         public String time2;
         public String sprite;

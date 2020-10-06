@@ -33,6 +33,8 @@ namespace WindowsFormsApplication1
             this.LabelName = new System.Windows.Forms.Label();
             this.nazvanieTextBox = new System.Windows.Forms.TextBox();
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.Char_Stats = new System.Windows.Forms.Label();
             this.Char_Info = new System.Windows.Forms.Label();
             this.PictureBoxBackground = new System.Windows.Forms.PictureBox();
@@ -42,6 +44,7 @@ namespace WindowsFormsApplication1
             this.rightPanel = new System.Windows.Forms.Panel();
             this.SaveCharButton = new System.Windows.Forms.Button();
             this.personPanel = new System.Windows.Forms.Panel();
+            this.SpriteNumberTextBox = new System.Windows.Forms.NumericUpDown();
             this.charNameBox = new System.Windows.Forms.TextBox();
             this.circlesTextBox = new System.Windows.Forms.TextBox();
             this.circlesLabel = new System.Windows.Forms.Label();
@@ -64,13 +67,12 @@ namespace WindowsFormsApplication1
             this.ButtonAddChar = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.SpriteNumberTextBox = new System.Windows.Forms.NumericUpDown();
             this.leftPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxBackground)).BeginInit();
             this.rightPanel.SuspendLayout();
             this.personPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.openSpace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpriteNumberTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openSpace)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelData
@@ -110,6 +112,8 @@ namespace WindowsFormsApplication1
             // 
             // leftPanel
             // 
+            this.leftPanel.Controls.Add(this.button1);
+            this.leftPanel.Controls.Add(this.checkBox1);
             this.leftPanel.Controls.Add(this.Char_Stats);
             this.leftPanel.Controls.Add(this.Char_Info);
             this.leftPanel.Controls.Add(this.PictureBoxBackground);
@@ -125,10 +129,31 @@ namespace WindowsFormsApplication1
             this.leftPanel.Size = new System.Drawing.Size(297, 380);
             this.leftPanel.TabIndex = 4;
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.Location = new System.Drawing.Point(0, 350);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(297, 30);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Компилировать";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(7, 193);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(245, 17);
+            this.checkBox1.TabIndex = 25;
+            this.checkBox1.Text = "Автозакрытие мультфильма по окончанию";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Char_Stats
             // 
             this.Char_Stats.AutoSize = true;
-            this.Char_Stats.Location = new System.Drawing.Point(12, 219);
+            this.Char_Stats.Location = new System.Drawing.Point(12, 240);
             this.Char_Stats.Name = "Char_Stats";
             this.Char_Stats.Size = new System.Drawing.Size(259, 13);
             this.Char_Stats.TabIndex = 24;
@@ -137,7 +162,7 @@ namespace WindowsFormsApplication1
             // Char_Info
             // 
             this.Char_Info.AutoSize = true;
-            this.Char_Info.Location = new System.Drawing.Point(48, 200);
+            this.Char_Info.Location = new System.Drawing.Point(44, 226);
             this.Char_Info.Name = "Char_Info";
             this.Char_Info.Size = new System.Drawing.Size(180, 13);
             this.Char_Info.TabIndex = 23;
@@ -146,6 +171,7 @@ namespace WindowsFormsApplication1
             // 
             // PictureBoxBackground
             // 
+            this.PictureBoxBackground.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PictureBoxBackground.Location = new System.Drawing.Point(84, 111);
             this.PictureBoxBackground.Name = "PictureBoxBackground";
             this.PictureBoxBackground.Size = new System.Drawing.Size(117, 72);
@@ -231,6 +257,18 @@ namespace WindowsFormsApplication1
             this.personPanel.TabIndex = 2;
             this.personPanel.Visible = false;
             // 
+            // SpriteNumberTextBox
+            // 
+            this.SpriteNumberTextBox.Location = new System.Drawing.Point(128, 136);
+            this.SpriteNumberTextBox.Name = "SpriteNumberTextBox";
+            this.SpriteNumberTextBox.Size = new System.Drawing.Size(43, 20);
+            this.SpriteNumberTextBox.TabIndex = 22;
+            this.SpriteNumberTextBox.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // charNameBox
             // 
             this.charNameBox.Location = new System.Drawing.Point(115, 84);
@@ -265,9 +303,10 @@ namespace WindowsFormsApplication1
             // 
             // openSpace
             // 
+            this.openSpace.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.openSpace.Location = new System.Drawing.Point(72, 203);
             this.openSpace.Name = "openSpace";
-            this.openSpace.Size = new System.Drawing.Size(186, 72);
+            this.openSpace.Size = new System.Drawing.Size(192, 72);
             this.openSpace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.openSpace.TabIndex = 17;
             this.openSpace.TabStop = false;
@@ -416,13 +455,6 @@ namespace WindowsFormsApplication1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // SpriteNumberTextBox
-            // 
-            this.SpriteNumberTextBox.Location = new System.Drawing.Point(128, 136);
-            this.SpriteNumberTextBox.Name = "SpriteNumberTextBox";
-            this.SpriteNumberTextBox.Size = new System.Drawing.Size(43, 20);
-            this.SpriteNumberTextBox.TabIndex = 22;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,8 +473,8 @@ namespace WindowsFormsApplication1
             this.rightPanel.ResumeLayout(false);
             this.personPanel.ResumeLayout(false);
             this.personPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.openSpace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpriteNumberTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.openSpace)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -486,5 +518,7 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.TextBox circlesTextBox;
         private System.Windows.Forms.Label circlesLabel;
         private System.Windows.Forms.NumericUpDown SpriteNumberTextBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
