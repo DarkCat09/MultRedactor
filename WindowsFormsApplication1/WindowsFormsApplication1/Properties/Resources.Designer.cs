@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1.Properties {
     // с помощью такого средства, как ResGen или Visual Studio.
     // Чтобы добавить или удалить член, измените файл .ResX и снова запустите ResGen
     // с параметром /str или перестройте свой проект VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -57,6 +57,21 @@ namespace WindowsFormsApplication1.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на //=================================================================================================================
+        /////           [These sections are for folding control  in Code::Blocks]
+        /////{          [Best viewed with &quot;Fold all on file open&quot; option enabled]             [best screen width is 115 chars]
+        /////=================================================================================================================
+        /////!
+        /////! @file    TXLib.h
+        /////! @brief   Библиотека Тупого Художника (The Dumb Artist Libr [остаток строки не уместился]&quot;;.
+        /// </summary>
+        internal static string TXLib {
+            get {
+                return ResourceManager.GetString("TXLib", resourceCulture);
             }
         }
     }

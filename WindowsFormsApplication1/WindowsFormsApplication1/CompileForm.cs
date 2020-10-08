@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -47,29 +48,7 @@ namespace WindowsFormsApplication1
                     textBox2.Text += ("Компиляция " + codeFilename + " в " +
                         Path.GetFileNameWithoutExtension(codeFilename) + ".exe с помощью " +
                         mingwDir + "\\bin\\mingw32-g++.exe:" + Environment.NewLine + Environment.NewLine);
-
-                    Process mingwp = new Process();
-                    mingwp.StartInfo = new ProcessStartInfo()
-                    {
-                        FileName = mingwDir + "\\bin\\mingw32-g++.exe",
-                        Arguments = codeFilename + " -o " + Path.GetDirectoryName(codeFilename) + "\\" +
-                        Path.GetFileNameWithoutExtension(codeFilename) + ".exe",
-                        UseShellExecute = false,
-                        WindowStyle = ProcessWindowStyle.Hidden,
-                        StandardOutputEncoding = Encoding.GetEncoding(866),
-                        StandardErrorEncoding = Encoding.GetEncoding(866),
-                        CreateNoWindow = true,
-                        RedirectStandardOutput = true,
-                        RedirectStandardError = true
-                    };
-                    mingwp.OutputDataReceived += new DataReceivedEventHandler(CompilerOutputHandler);
-                    mingwp.ErrorDataReceived += new DataReceivedEventHandler(CompilerOutputHandler);
-                    mingwp.Start();
-                    mingwp.BeginOutputReadLine();
-                    mingwp.BeginErrorReadLine();
-                    mingwp.WaitForExit(10000);
-
-                    _ = MessageBox.Show("Готово!");
+                    new Thread(new ThreadStart(CompilingFunction)).Start();
                 }
                 catch (Exception ex)
                 {
@@ -83,9 +62,34 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void CompilingFunction()
+        {
+            Process mingwp = new Process();
+            mingwp.StartInfo = new ProcessStartInfo()
+            {
+                FileName = mingwDir + "\\bin\\mingw32-g++.exe",
+                Arguments = codeFilename + " -o " + Path.GetDirectoryName(codeFilename) + "\\" +
+                Path.GetFileNameWithoutExtension(codeFilename) + ".exe",
+                UseShellExecute = false,
+                WindowStyle = ProcessWindowStyle.Hidden,
+                StandardOutputEncoding = Encoding.GetEncoding(866),
+                StandardErrorEncoding = Encoding.GetEncoding(866),
+                CreateNoWindow = true,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true
+            };
+            mingwp.OutputDataReceived += new DataReceivedEventHandler(CompilerOutputHandler);
+            mingwp.ErrorDataReceived += new DataReceivedEventHandler(CompilerOutputHandler);
+            mingwp.Start();
+            mingwp.BeginOutputReadLine();
+            mingwp.BeginErrorReadLine();
+            mingwp.WaitForExit(20000);
+            textBox2.Invoke(new Action(() => { textBox2.AppendText("Готово!" + Environment.NewLine); }));
+        }
+
         private void CompilerOutputHandler(object sendingProcess, DataReceivedEventArgs outputLine)
         {
-            textBox2.Invoke(new Action(() => { textBox2.Text += (outputLine.Data + Environment.NewLine); }));
+            textBox2.Invoke(new Action(() => { textBox2.AppendText(outputLine.Data + Environment.NewLine); }));
         }
     }
 }

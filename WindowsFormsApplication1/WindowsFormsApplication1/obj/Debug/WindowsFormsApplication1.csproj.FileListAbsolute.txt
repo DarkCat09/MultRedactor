@@ -1,0 +1,11 @@
+C:\Users\Acer\VisualStudio\source\repos\MultRedactor\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Acer\VisualStudio\source\repos\MultRedactor\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Acer\VisualStudio\source\repos\MultRedactor\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Acer\VisualStudio\source\repos\MultRedactor\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojAssemblyReference.cache
+C:\Users\Acer\VisualStudio\source\repos\MultRedactor\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.CompileForm.resources
+C:\Users\Acer\VisualStudio\source\repos\MultRedactor\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.MainForm.resources
+C:\Users\Acer\VisualStudio\source\repos\MultRedactor\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Acer\VisualStudio\source\repos\MultRedactor\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.cache
+C:\Users\Acer\VisualStudio\source\repos\MultRedactor\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.CoreCompileInputs.cache
+C:\Users\Acer\VisualStudio\source\repos\MultRedactor\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Acer\VisualStudio\source\repos\MultRedactor\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb

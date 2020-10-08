@@ -239,78 +239,86 @@ namespace WindowsFormsApplication1
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                mainFilename = saveFileDialog1.FileName;
-
-                //Adding TXLibrary and pictures
-                File.Copy("TXLib.h", Path.GetDirectoryName(mainFilename) + "\\TXLib.h", true);
-                string dir_path = Path.GetDirectoryName(mainFilename) + "\\Pictures";
-                if (!Directory.Exists(dir_path))
+                try
                 {
-                    Directory.CreateDirectory(dir_path);
-                }
+                    mainFilename = saveFileDialog1.FileName;
 
-                if (addressBackground != dir_path + "\\" + Path.GetFileName(addressBackground))
-                {
-                    File.Copy(addressBackground, dir_path + "\\" + Path.GetFileName(addressBackground), true);
-                }
- 
-                Files.CreateStruct(mainFilename);
-                Files.OpenMain(mainFilename, PictureBoxBackground, addressBackground);
- 
-                for (int nomer = 0; nomer < nomerPersa; nomer++)
-                {
-                    File.Copy(persons[nomer].address, dir_path + "\\" + Path.GetFileName(persons[nomer].address), true);
+                    //Adding TXLibrary and pictures
+                    File.WriteAllText(Path.GetDirectoryName(mainFilename) + "\\TXLib.h", Properties.Resources.TXLib);
+                    string dir_path = Path.GetDirectoryName(mainFilename) + "\\Pictures";
+                    if (!Directory.Exists(dir_path))
+                    {
+                        Directory.CreateDirectory(dir_path);
+                    }
 
-                    if (dir_path == dir_path + "\\" + Path.GetFileName(persons[nomer].address))
+                    if (addressBackground != dir_path + "\\" + Path.GetFileName(addressBackground))
+                    {
+                        File.Copy(addressBackground, dir_path + "\\" + Path.GetFileName(addressBackground), true);
+                    }
+
+                    Files.CreateStruct(mainFilename);
+                    Files.OpenMain(mainFilename, PictureBoxBackground, addressBackground);
+
+                    for (int nomer = 0; nomer < nomerPersa; nomer++)
                     {
                         File.Copy(persons[nomer].address, dir_path + "\\" + Path.GetFileName(persons[nomer].address), true);
+
+                        if (dir_path == dir_path + "\\" + Path.GetFileName(persons[nomer].address))
+                        {
+                            File.Copy(persons[nomer].address, dir_path + "\\" + Path.GetFileName(persons[nomer].address), true);
+                        }
+
+                        if (persons[nomer].moveside == "Прямо")
+                        {
+                            Line.CreatePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
+                        }
+                        else if (persons[nomer].moveside == "Волнами")
+                        {
+                            Sinus.CreatePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
+                        }
+                        else if (persons[nomer].moveside == "Кругами")
+                        {
+                            Circle.CreatePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
+                        }
+                        else if (persons[nomer].moveside == "Диагонально")
+                        {
+                            Line.CreatePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
+                        }
                     }
 
-                    if (persons[nomer].moveside == "Прямо")
+                    Files.OpenWhile(mainFilename, maxTime);
+
+                    for (int nomer = 0; nomer < nomerPersa; nomer++)
                     {
-                        Line.CreatePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
+                        if (persons[nomer].moveside == "Прямо")
+                        {
+                            Line.MovePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
+                        }
+                        else if (persons[nomer].moveside == "Волнами")
+                        {
+                            Sinus.MovePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
+                        }
+                        else if (persons[nomer].moveside == "Кругами")
+                        {
+                            Circle.MovePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
+                        }
+                        else if (persons[nomer].moveside == "Диагонально")
+                        {
+                            Line.MovePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
+                        }
                     }
-                    else if (persons[nomer].moveside == "Волнами")
-                    {
-                        Sinus.CreatePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
-                    }
-                    else if (persons[nomer].moveside == "Кругами")
-                    {
-                        Circle.CreatePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
-                    }
-                    else if (persons[nomer].moveside == "Диагонально")
-                    {
-                        Line.CreatePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
-                    }
+
+                    Files.CloseWhile(mainFilename);
+                    DeletePics(mainFilename, nomerPersa);
+                    Files.Ending(mainFilename, checkBox1.Checked);
+
+                    MessageBox.Show("Готово!");
                 }
-
-                Files.OpenWhile(mainFilename, maxTime);
-
-                for (int nomer = 0; nomer < nomerPersa; nomer++)
+                catch (Exception ex)
                 {
-                    if (persons[nomer].moveside == "Прямо")
-                    {
-                        Line.MovePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
-                    }
-                    else if (persons[nomer].moveside == "Волнами")
-                    {
-                        Sinus.MovePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
-                    }
-                    else if (persons[nomer].moveside == "Кругами")
-                    {
-                        Circle.MovePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
-                    }
-                    else if (persons[nomer].moveside == "Диагонально")
-                    {
-                        Line.MovePerson(mainFilename, Person.PersonName(nomer), persons[nomer]);
-                    }
+                    _ = MessageBox.Show("Произошла ошибка!\n" + ex.Message, "Ошибка",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                Files.CloseWhile(mainFilename);
-                DeletePics(mainFilename, nomerPersa);
-                Files.Ending(mainFilename, checkBox1.Checked);
-
-                MessageBox.Show("Готово!");
             }
         }
 
@@ -344,11 +352,11 @@ namespace WindowsFormsApplication1
 
         private void Char_Info_Click(object sender, EventArgs e)
         {
-            this.leftPanel.Controls.Remove(persons[nomerPersa - 1].l1);
-            this.leftPanel.Controls.Remove(persons[nomerPersa - 1].l2);
-            this.leftPanel.Controls.Remove(persons[nomerPersa - 1].l3);
-            this.leftPanel.Controls.Remove(persons[nomerPersa - 1].b1);
-            this.leftPanel.Controls.Remove(persons[nomerPersa - 1].b2);
+            leftPanel.Controls.Remove(persons[nomerPersa - 1].l1);
+            leftPanel.Controls.Remove(persons[nomerPersa - 1].l2);
+            leftPanel.Controls.Remove(persons[nomerPersa - 1].l3);
+            leftPanel.Controls.Remove(persons[nomerPersa - 1].b1);
+            leftPanel.Controls.Remove(persons[nomerPersa - 1].b2);
             nomerPersa--;
             yPersa -= 30;
         }
